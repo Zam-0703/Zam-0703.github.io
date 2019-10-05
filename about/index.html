@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Archives | Zam’s Blog</title>
+  <title>关于 | Zam’s Blog</title>
   
   <meta name="keywords" content="Tech">
   
@@ -48,7 +48,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover  half'>
+    <cover class='cover page half'>
       
         
   <h1 class='title'>Zam's Blog</h1>
@@ -111,7 +111,7 @@
 
       
     </cover>
-    <header class="l_header pure">
+    <header class="l_header no_sidebar pure">
   <div id="loading-bar-wrapper">
     <div id="loading-bar" class="pure"></div>
   </div>
@@ -193,8 +193,6 @@
 			<a class="logo flat-box"></a>
 			<ul class='switcher h-list'>
 				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
         
 			</ul>
 		</div>
@@ -280,32 +278,136 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      <div class='l_main'>
-	
-	  <article id="archive-page" class="post article white-box">
-	    <section class="archive">
-	      
-	          <div class="archive-item archive-year mark">
-	            <h2>2019</h2>
-	          </div>
-	      
-	          <div class="archive-item archive-post mark">
-	            <a href="/2019/10/04/hello-world/">
-	              <time>10-04</time>
-	              <span class="title">
-	                
-	                  Hello World
-	                
-	                
-									
-									
-	              </span>
-	            </a>
-	          </div>
-	      
-	    </section>
-	  </article>
-	
+      <div class='l_main no_sidebar'>
+  
+
+  <article id="page" class="post white-box article-type-page" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/about/index.html">
+        关于
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://Zam-0703.github.io" rel="nofollow">
+        
+          <img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/avatar.png">
+        
+        <p>Zam</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-10-04</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        
+      </div>
+      
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -393,6 +495,11 @@
           
         
           
+          
+            
+              
+
+            
           
         
           
@@ -575,6 +682,57 @@
           
         
       
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+
+            
+          
+        
+          
+          
+        
+      
     
 
   
@@ -653,14 +811,6 @@ setInterval("createtime()",250);
 </script>
 </footer>
 <script>setLoadingBarProgress(80);</script>
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
       <script>setLoadingBarProgress(60);</script>
@@ -749,6 +899,36 @@ setInterval("createtime()",250);
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0.5/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "IaxMMAnVuk67VTjLMsPPlScb-gzGzoHsz",
+    appKey: "X0ug2a0Yecjwyt47fJcBjLP1",
+    placeholder: "有什么想对我说的呢？",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'true'
+  })
+  </script>
 
 
 
