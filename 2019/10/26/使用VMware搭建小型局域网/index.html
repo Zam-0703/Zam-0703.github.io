@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Category: Learning | Zam’s Blog</title>
+  <title>使用VMware搭建小型局域网 | Zam’s Blog</title>
   
   <meta name="keywords" content="Tech">
   
@@ -48,7 +48,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover  half'>
+    <cover class='cover post half'>
       
         
   <h1 class='title'>Zam's Blog</h1>
@@ -280,25 +280,11 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      
-<div class='l_main'>
+      <div class='l_main'>
   
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
     
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
 
 
   <section class='meta'>
@@ -307,11 +293,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/2019/10/05/AST-Task1/">
-      AST Task1
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/2019/10/26/使用VMware搭建小型局域网/">
+        使用VMware搭建小型局域网
+      </a>
+    </h1>
+  
 
 
       
@@ -339,7 +327,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-10-05</p>
+    <p>2019-10-26</p>
   </a>
 </div>
 
@@ -347,13 +335,23 @@
         
           
             
+
+          
+        
+          
+            
   
-  <div class='new-meta-item category'>
-    <a href='/categories/Learning/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>Learning</p>
-    </a>
-  </div>
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
 
 
           
@@ -371,48 +369,231 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><h2 id="安装VMware"><a href="#安装VMware" class="headerlink" title="安装VMware"></a>安装VMware</h2><p>下载地址：<a href="https://www.nocmd.com/740.html" target="_blank" rel="noopener">https://www.nocmd.com/740.html</a><br>安装无脑下一步即可</p>
+<h2 id="安装Ubuntu"><a href="#安装Ubuntu" class="headerlink" title="安装Ubuntu"></a>安装Ubuntu</h2><p>镜像下载地址：<a href="https://cn.ubuntu.com/download" target="_blank" rel="noopener">https://cn.ubuntu.com/download</a><br>最新版的VMware支持Ubuntu的简易安装，所以在配置时直接填好主机名用户名密码就可以愉快的食用Ubuntu了</p>
+<h1 id="配置局域网"><a href="#配置局域网" class="headerlink" title="配置局域网"></a>配置局域网</h1><h2 id="在虚拟网络编辑器中配置网关以及网段"><a href="#在虚拟网络编辑器中配置网关以及网段" class="headerlink" title="在虚拟网络编辑器中配置网关以及网段"></a>在虚拟网络编辑器中配置网关以及网段</h2><p>在VMware主页面 编辑–》虚拟网络编辑器<br>单击箭头所指按钮，给编辑器提升权限以更改设置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E6%9B%B4%E6%94%B9%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%BE%E7%BD%AE.png" alt="更改虚拟网络编辑器设置"></p>
+<p>我们使用NAT模式，所以选择VMnet8。（记住这个名称，稍后还会用到）<br>不勾选【使用本地DHCP】服务这个复选框，因为我们要求固定IP，DHCP是动态分配IP的。<br>首先，我们将子网IP设置成我们需要的IP地址所在的网段，即192.168.188.0，如图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E6%9B%B4%E6%94%B9VMnet8%E5%AD%90%E7%BD%91IP.png" alt="更改VMnet8子网IP"></p>
+<p>点击NAT设置。<br>我们将网关IP设置成我们需要的IP地址192.168.188.2，如图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E6%9B%B4%E6%94%B9VMnet8%E7%BD%91%E5%85%B3%E8%AE%BE%E7%BD%AE.png" alt="更改VMnet8网关设置"></p>
+<p>然后再选择Host-only模式的网卡VMnet1<br>同理，不勾选【使用本地DHCP】服务这个复选框。<br>首先，我们将子网IP设置成我们需要的IP地址所在的网段，即192.168.188.0，如图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E6%9B%B4%E6%94%B9VMnet1%E5%AD%90%E7%BD%91IP.png" alt="更改VMnet1子网IP"></p>
+<h2 id="在控制面板中配置虚拟网卡IP"><a href="#在控制面板中配置虚拟网卡IP" class="headerlink" title="在控制面板中配置虚拟网卡IP"></a>在控制面板中配置虚拟网卡IP</h2><p>在VMware中更改了虚拟网络之后，我们还需要去宿主机的网络控制面板中更改网络适配器，才能让我们的虚拟主机能够正常的上网<br>在控制面版中找到VMware Network Adapter VMnet8，也就是我们之前记住的使用NAT模式的那张网卡<br>双击图标后，在弹出的窗口中单击属性–&gt;双击Internet协议版本4<br>将弹出的窗口设置成如图所示的亚子：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF%E8%AE%BE%E7%BD%AE.png" alt="控制面板设置"></p>
+<h2 id="到此，配置局域网的工作暂告一段落"><a href="#到此，配置局域网的工作暂告一段落" class="headerlink" title="到此，配置局域网的工作暂告一段落"></a>到此，配置局域网的工作暂告一段落</h2><h1 id="打开三台虚拟机，进行最后的指向操作"><a href="#打开三台虚拟机，进行最后的指向操作" class="headerlink" title="打开三台虚拟机，进行最后的指向操作"></a>打开三台虚拟机，进行最后的指向操作</h1><h2 id="对于充当路由器和DNS服务器的虚拟机VM1"><a href="#对于充当路由器和DNS服务器的虚拟机VM1" class="headerlink" title="对于充当路由器和DNS服务器的虚拟机VM1"></a>对于充当路由器和DNS服务器的虚拟机VM1</h2><p>首先打开VM1的IP转发功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/sysctl.conf</span><br></pre></td></tr></table></figure>
+
+<p>把net.ipv4.ip_forward = 0改成1，或者是将注释符删去，如图所示：</p>
+<p>![更改VM1 IP转发.png](<a href="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/更改VM1" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/更改VM1</a> IP转发.png)</p>
+<p>使用<code>sysctl -p</code>命令使改动生效。</p>
+<p>然后再将用于与VM2和VM3通信的网卡手动分配下IP<br>注意，此时一定要分清哪张网卡是工作在NAT模式下，用于与宿主机通信的；哪张是工作在Host-Only模式下，用于与两个虚拟机通信的。<br>所以在开始更改网卡配置之前，需要先执行<code>ifconfig</code>确定网卡的具体信息</p>
+<p>从ubuntu从17.10开始，已经不再在/etc/network/interfaces里配置IP，即使配置了也不会生效，而是改成netplan方式 ，配置写在/etc/netplan/文件夹里或者类似名称的yaml文件里。因此，我们应先查看/etc/netplan文件夹下的文件，来判断我们需要修改的是什么文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/netplan</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E6%9F%A5%E7%9C%8B%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.PNG" alt="输出结果"></p>
+<p>从而确定下一步的命令为：<code>sudo nano 01-network-manager-all.yaml</code></p>
+<p>经过我的甄别，确定网卡ens38是那张工作在Host-Only模式下的网卡、ens33是那张工作在NAT模式下的网卡，于是乎按照任务要求，如图所示编辑两张网卡的配置：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E6%9B%B4%E6%94%B9netplan1.PNG" alt="更改netplan"></p>
+<p>之后运行命令<code>netplan apply</code>来应用这一设置</p>
+<p>到这里，对VM1的操作就告一段落</p>
+<h2 id="对于VM2和VM3"><a href="#对于VM2和VM3" class="headerlink" title="对于VM2和VM3"></a>对于VM2和VM3</h2><p>照葫芦画瓢，首先执行<code>ifconfig</code>确定网卡的具体信息，再更改netplan的配置信息。<br>具体操作过程与VM1大差不差，就直接放按着任务要求配置好的netplan了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/VM2netplan.PNG" alt="VM2 netplan"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/VM3netplan.PNG" alt="VM3 netplan"></p>
+<p>然后就可以实现VM1,VM2,VM3三台机器的互ping</p>
+<h1 id="对VM2与VM3进行NAT转换"><a href="#对VM2与VM3进行NAT转换" class="headerlink" title="对VM2与VM3进行NAT转换"></a>对VM2与VM3进行NAT转换</h1><p>但是，经过上述的操作，VM2与VM3却不能ping通VM1的网关和公网。有句话说得好，不能连公网的主机和咸鱼没啥区别。因此，我们需要用iptables实现NAT转换，使得B和C能够访问(ping)A的网关和公网。</p>
+<p>具体的NAT操作过程示例，可以参照这篇blog中SNAT部分，再根据具体的环境配置iptables的参数：<a href="https://www.zsythink.net/archives/1764" target="_blank" rel="noopener">https://www.zsythink.net/archives/1764</a></p>
+<p>在此次任务中，命令为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iptables -t nat -A POSTROUTING -s 10.1.2.0/24 -j SNAT --to-source 192.168.188.128</span><br></pre></td></tr></table></figure>
+
+<p>执行之后就可以在VM2与VM3两台“内网”机器中愉快的连上公网了~</p>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><ul>
+<li><p>1.netplan apply时遇到格式错误</p>
+<blockquote>
+<p>错误原因：YAML文件对格式的要求非常严格。在冒号后少打一个空格都会导致文件读取错误。</p>
+</blockquote>
+<blockquote>
+<p>解决方法：重新检查一遍YAML文件格式是否正确，有没有少打空格。并在之后多多注意格式问题</p>
+</blockquote>
+</li>
+<li><p>2.在执行命令中多次出现Permission Denied</p>
+<blockquote>
+<p>错误原因：因为这次任务中涉及到对网络配置等系统关键文件进行修改的操作，所以需要su权限才能进行命令的执行。</p>
+</blockquote>
+<blockquote>
+<p>解决方法：在之后的命令行输入时，涉及到对系统文件、系统环境的修改时要记得加上sudo。</p>
+</blockquote>
+<blockquote>
+<p>不能因为sudo麻烦而直接使用root用户登录。不然没准哪天你就会不小心删库跑路</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="Task-Over"><a href="#Task-Over" class="headerlink" title="Task Over"></a>Task Over</h1><p>然而还差12h工时……绝了</p>
+
+      </div>
       
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
-        <div class="readmore">
-          <a href="/2019/10/05/AST-Task1/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-26T17:28:16+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2019年10月26日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Dian-CyberSecurity-Team/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Dian CyberSecurity Team</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Network/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Network</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://Zam-0703.github.io/2019/10/26/使用VMware搭建小型局域网/&title=使用VMware搭建小型局域网 | Zam’s Blog&pics=https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/avatar.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://Zam-0703.github.io/2019/10/26/使用VMware搭建小型局域网/&title=使用VMware搭建小型局域网 | Zam’s Blog&pics=https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/avatar.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3awYrcMBAE0P3/n95ATgnBM1XdErOB59NgjKznQ6unpK+v+Pr+feX3n555/fvP6/X9wxceHh7eaOpP1+Y1/z65mejr+TyOjIeHh3eNlxf0HJCP8DS52Wh4eHh4P4c3m2LbWL8eHw8PD+9/5+V38g/UfhQ8PDy8T/GSMCJfEm4wrmcteHh4eDFvFqF+9vfF/T08PDy8xa56ciWNdVK+27AjmhseHh7eBV4ylTZoSKae3MnD3DeLBx4eHt4FXnu8KS/ls6nnbz/2/wAPDw+vrJCnQoH8+WFzXAYleHh4eDd4bQo6e8Fskyxpo/M/A3h4eHhneW333cYN+fNtVFGcjMDDw8M7ymtDh/YgVPKBZnFGse7h4eHhHeLNXr8v03kLni8nj1kLHh4e3jXebLiz7NlC9XgfDw8P7wIv39pvN65mQfDrhWT4Fjw8PLwLvPYQwOyabXQNm2k8PDy8a7xZs5sX92QbbNOOv5k/Hh4e3gVe27zum+AEny8AdWONh4eHt+blRTYPfJNmt/1w+Zh//cbDw8O7zJuFtpuNtDwvyRtuPDw8vNu8/OjVrC3OP0G7kBQfCA8PD+9W7S1Ip2KL2R7dZiZ4eHh4Z3lJ4d4sA0nEkEcV9ch4eHh4h3ibP/mz6LaNGNojC48nI/Dw8PAO8fLjU7OoNx+tDSBmMQceHh7enpeHs3XxHRX0FvDmNx4eHt4FXjuVvIVtJ71pkQ98dDw8PLyY911eOWNTuPcRCR4eHt493n5h2FDzZxLGlZYaDw8Pb7Q8JKFqGxO07fUslcXDw8O7zZstBklpbjfGZm3xm0gCDw8P7wfwNiHF/pl8icLDw8P7LK+tt+1os3j32MKAh4eHd2iHPS/ir5H78XP8KmvBw8PDm59lKsp9Mt1kEi2+jUvw8PDw1rxfCIYiFpbI54QAAAAASUVORK5CYII='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://Zam-0703.github.io/2019/10/26/使用VMware搭建小型局域网/&title=使用VMware搭建小型局域网 | Zam’s Blog&pics=https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/avatar.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3awYrcMBAE0P3/n95ATgnBM1XdErOB59NgjKznQ6unpK+v+Pr+feX3n555/fvP6/X9wxceHh7eaOpP1+Y1/z65mejr+TyOjIeHh3eNlxf0HJCP8DS52Wh4eHh4P4c3m2LbWL8eHw8PD+9/5+V38g/UfhQ8PDy8T/GSMCJfEm4wrmcteHh4eDFvFqF+9vfF/T08PDy8xa56ciWNdVK+27AjmhseHh7eBV4ylTZoSKae3MnD3DeLBx4eHt4FXnu8KS/ls6nnbz/2/wAPDw+vrJCnQoH8+WFzXAYleHh4eDd4bQo6e8Fskyxpo/M/A3h4eHhneW333cYN+fNtVFGcjMDDw8M7ymtDh/YgVPKBZnFGse7h4eHhHeLNXr8v03kLni8nj1kLHh4e3jXebLiz7NlC9XgfDw8P7wIv39pvN65mQfDrhWT4Fjw8PLwLvPYQwOyabXQNm2k8PDy8a7xZs5sX92QbbNOOv5k/Hh4e3gVe27zum+AEny8AdWONh4eHt+blRTYPfJNmt/1w+Zh//cbDw8O7zJuFtpuNtDwvyRtuPDw8vNu8/OjVrC3OP0G7kBQfCA8PD+9W7S1Ip2KL2R7dZiZ4eHh4Z3lJ4d4sA0nEkEcV9ch4eHh4h3ibP/mz6LaNGNojC48nI/Dw8PAO8fLjU7OoNx+tDSBmMQceHh7enpeHs3XxHRX0FvDmNx4eHt4FXjuVvIVtJ71pkQ98dDw8PLyY911eOWNTuPcRCR4eHt493n5h2FDzZxLGlZYaDw8Pb7Q8JKFqGxO07fUslcXDw8O7zZstBklpbjfGZm3xm0gCDw8P7wfwNiHF/pl8icLDw8P7LK+tt+1os3j32MKAh4eHd2iHPS/ir5H78XP8KmvBw8PDm59lKsp9Mt1kEi2+jUvw8PDw1rxfCIYiFpbI54QAAAAASUVORK5CYII='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
+        
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
       
     </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/C/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> C</a>
-        
-          <a href="/tags/AST-of-EIC-HUST/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> AST of EIC,HUST</a>
-        
-          <a href="/tags/Task/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Task</a>
-        
-      </div>
-    
   </section>
-</article>
 
-          </div>
-        
+
       
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+      
+          <div class="prev-next">
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/2019/10/16/AST-Task2/" rel="prev" title="AST-Task2">
+                                  
+                                      AST-Task2
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/C/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> C</a> <a class="tag" href="/tags/Learning/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Learning</a> <a class="tag" href="/tags/Function-Pointer/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Function&Pointer</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
 
-  
 
 
-    
-  
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '使用VMware搭建小型局域网',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class='l_side'>
@@ -501,6 +682,25 @@
           
         
           
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前期准备"><span class="toc-text">前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装VMware"><span class="toc-text">安装VMware</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Ubuntu"><span class="toc-text">安装Ubuntu</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置局域网"><span class="toc-text">配置局域网</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#在虚拟网络编辑器中配置网关以及网段"><span class="toc-text">在虚拟网络编辑器中配置网关以及网段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在控制面板中配置虚拟网卡IP"><span class="toc-text">在控制面板中配置虚拟网卡IP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#到此，配置局域网的工作暂告一段落"><span class="toc-text">到此，配置局域网的工作暂告一段落</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打开三台虚拟机，进行最后的指向操作"><span class="toc-text">打开三台虚拟机，进行最后的指向操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对于充当路由器和DNS服务器的虚拟机VM1"><span class="toc-text">对于充当路由器和DNS服务器的虚拟机VM1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对于VM2和VM3"><span class="toc-text">对于VM2和VM3</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#对VM2与VM3进行NAT转换"><span class="toc-text">对VM2与VM3进行NAT转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#遇到的问题"><span class="toc-text">遇到的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Task-Over"><span class="toc-text">Task Over</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
           
         
           
@@ -729,6 +929,69 @@
           
         
       
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget related_posts'>
+    
+<header class='pure'>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;相关文章</div>
+  
+</header>
+
+    <div class="content pure">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\16\AST-Task2\" title="AST-Task2" rel="bookmark">AST-Task2</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\04\hello-world\" title="Hello World" rel="bookmark">Hello World</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
     
 
   
@@ -895,6 +1158,36 @@ setInterval("createtime()",250);
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0.5/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "IaxMMAnVuk67VTjLMsPPlScb-gzGzoHsz",
+    appKey: "X0ug2a0Yecjwyt47fJcBjLP1",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'true'
+  })
+  </script>
 
 
 
