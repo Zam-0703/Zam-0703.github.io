@@ -373,7 +373,7 @@
       <div class="article-entry" itemprop="articleBody">
         <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>本来想装物理机Linux，做个双系统，但是奈何本机硬件不算主流（Ryzen 7 3700u with Radeon Vega Mobile Gfx）,担心在物理机上安Arch会出现驱动兼容性问题，遂作罢，改用VMware安装虚拟机，还可以顺带做网安组的Task，美滋滋。</p>
 <h1 id="安装准备"><a href="#安装准备" class="headerlink" title="安装准备"></a>安装准备</h1><h2 id="VMware的安装"><a href="#VMware的安装" class="headerlink" title="VMware的安装"></a>VMware的安装</h2><p>下载地址：<a href="https://www.nocmd.com/740.html" target="_blank" rel="noopener">https://www.nocmd.com/740.html</a><br>安装无脑下一步即可</p>
-<h2 id="Arch-Linux镜像"><a href="#Arch-Linux镜像" class="headerlink" title="Arch Linux镜像"></a>Arch Linux镜像</h2><p>下载地址：<a href="http://mirrors.zju.edu.cn/archlinux/iso/2019.10.01/（浙大源）" target="_blank" rel="noopener">http://mirrors.zju.edu.cn/archlinux/iso/2019.10.01/（浙大源）</a><br>下载链接地址中的archlinux-2019.10.01-x86_64.iso<br>若此地址下载缓慢，也可以进入官方的下载源集合：<a href="https://www.archlinux.org/download/" target="_blank" rel="noopener">https://www.archlinux.org/download/</a></p>
+<h2 id="Arch-Linux镜像"><a href="#Arch-Linux镜像" class="headerlink" title="Arch Linux镜像"></a>Arch Linux镜像</h2><p>下载地址：<a href="http://mirrors.zju.edu.cn/archlinux/iso/2019.10.01/" target="_blank" rel="noopener">http://mirrors.zju.edu.cn/archlinux/iso/2019.10.01/</a> （浙大源）<br>下载链接地址中的archlinux-2019.10.01-x86_64.iso<br>若此地址下载缓慢，也可以进入官方的下载源集合：<a href="https://www.archlinux.org/download/" target="_blank" rel="noopener">https://www.archlinux.org/download/</a></p>
 <h1 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h1><h2 id="VMware配置"><a href="#VMware配置" class="headerlink" title="VMware配置"></a>VMware配置</h2><p>打开VMware，首先点击文件选项 -&gt; 新建虚拟机 -&gt; 典型 -&gt; 稍后安装操作系统 -&gt; 选择Linux选项 -&gt; 版本选择‘Linux4.x’，内存按需分配就可以，硬盘分配40G左右，根据自己需求来定，毕竟Arch一开始还算一个比较干净简洁轻量的Linux release。网络类型选择NAT，其他默认即可。<br>CD/DVD选项记得选择ArchLinux镜像。</p>
 <h2 id="Arch-Linux安装准备"><a href="#Arch-Linux安装准备" class="headerlink" title="Arch Linux安装准备"></a>Arch Linux安装准备</h2><h3 id="启动安装archlinux"><a href="#启动安装archlinux" class="headerlink" title="启动安装archlinux"></a>启动安装archlinux</h3><p>不论你使用的是EFI或BIOS引导，均选择Boot Arch Linux(x86_64)这一选项<br>启动成功后就会进入命令行模式，此时如果你不清楚你用的是EFI引导还是BIOS引导，可以在此处列出efivars目录以验证启动模式来判断主板是以何种方式引导系统的（这对之后对硬盘的分区 <strong>十分有用</strong>）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /sys/firmware/efi/efivars</span><br></pre></td></tr></table></figure>
@@ -491,6 +491,19 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S vim</span><br></pre></td></tr></table></figure>
 
 <h3 id="安装grub"><a href="#安装grub" class="headerlink" title="安装grub"></a>安装grub</h3><p>grub是一个启动引导器，同时支持EFI和BIOS方式的启动。若使用的UEFI方式引导系统，则还需要安装efibootmgr，如果是双系统的话，还需要安装os-prober，且如果使用Intel CPU的话，则需要安装 intel-ucode 并启用 <a href="https://wiki.archlinux.org/index.php/Microcode_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">因特尔微码更新</a></p>
+<p><strong>嘤特尔微码更新并不是一定需要开启</strong></p>
+<ul>
+<li><p>微码</p>
+<blockquote>
+<p>微码（microcode）就是由 Intel/AMD 提供的 CPU 固件。Linux 的内核可以在引导时更新 CPU 固件，而无需 BIOS 更新。处理器的微码保存在内存中，在每次启动系统时，内核可以更新这个微码。</p>
+</blockquote>
+<blockquote>
+<p>这些来自 Intel/AMD 的微码的更新可以去修复 bug 或者使用补丁来防范 bug。例如前段时间爆出的<a href="https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV180002" target="_blank" rel="noopener">幽灵(Spectre)与熔断(Meltdown)</a>漏洞，就可以通过更新微码来解决</p>
+</blockquote>
+</li>
+<li><p>因此，最好还是启用因特尔微码更新，以保证自己的数据安全</p>
+</li>
+</ul>
 <p>因为我使用的是虚拟机和BIOS引导方式，因此只需要安装grub：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub</span><br></pre></td></tr></table></figure>
 
@@ -518,10 +531,11 @@
 <h3 id="安装其余实用软件"><a href="#安装其余实用软件" class="headerlink" title="安装其余实用软件"></a>安装其余实用软件</h3><p>deepin还提供了解压、下载工具等实用工具的下载<br>执行以下命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S file-roller evince gedit thunderbird gpicview</span><br><span class="line">sudo pacman -S unrar unzip p7zip</span><br></pre></td></tr></table></figure>
 
-<h3 id="安装桌面管理器sddm"><a href="#安装桌面管理器sddm" class="headerlink" title="安装桌面管理器sddm"></a>安装桌面管理器sddm</h3><p>安装好了桌面环境包以后，我们需要安装一个图形化的桌面管理器来帮助我们登录并且选择我们使用的桌面环境，sddm就是这样的一款管理器。<br>执行以下命令：</p>
+<h3 id="安装桌面管理器sddm"><a href="#安装桌面管理器sddm" class="headerlink" title="安装桌面管理器sddm"></a>安装桌面管理器sddm</h3><p><em>经过某李姓学长提醒，了解了sddm和lightdm都是图形化的桌面管理器，因此若上面安装deepin时已经安装了lightdm，接下来就不需要安装桌面管理器sddm了</em></p>
+<p>安装好了桌面环境包以后，我们需要安装一个图形化的桌面管理器来帮助我们登录并且选择我们使用的桌面环境，sddm就是这样的一款管理器。<br>执行以下命令来安装sddm：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S sddm</span><br></pre></td></tr></table></figure>
 
-<h3 id="设置开机启动sddm服务"><a href="#设置开机启动sddm服务" class="headerlink" title="设置开机启动sddm服务"></a>设置开机启动sddm服务</h3><p>使用systemctl命令：<code>sudo systemctl enable sddm</code>来启用sddm开机自启</p>
+<h3 id="设置开机启动sddm服务"><a href="#设置开机启动sddm服务" class="headerlink" title="设置开机启动sddm服务"></a>设置开机启动sddm服务</h3><p>使用systemctl命令：<code>sudo systemctl enable sddm</code>来启用sddm开机自启<br>设置lightdm开机自启同理</p>
 <h3 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h3><p>到现在我们已经安装好了桌面环境，但是还有一件事情需要我们提前设置一下。由于我们之前使用的一直都是netctl这个自带的网络服务，而桌面环境使用的是NetworkManager这个网络服务，所以我们需要禁用netctl并启用NetworkManager：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl disable netctl</span><br><span class="line">sudo systemctl enable NetworkManager</span><br></pre></td></tr></table></figure>
 
@@ -596,7 +610,7 @@
 <p>在sys.c的末尾加入以下函数</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">asmlinkage <span class="keyword">void</span> <span class="title">sys_helloworld</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">  printk(“hello world”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>![修改sys.c](<a href="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/修改sys.c" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/修改sys.c</a> 1.png)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E4%BF%AE%E6%94%B9sys.c-1.png" alt="修改sys.c"></p>
 <h3 id="修改头文件，增加系统调用声明"><a href="#修改头文件，增加系统调用声明" class="headerlink" title="修改头文件，增加系统调用声明"></a>修改头文件，增加系统调用声明</h3><p><strong>注意：我在修改之后的系统调用后才发现520已经被占，因此之后图里所有的520都被改成了436，也推荐大家以后新增调用时先去看看syscall_64.tbl文件的内容。</strong><br>使用命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ./include/uapi/asm-generic/unistd.h</span><br></pre></td></tr></table></figure>
 
@@ -624,7 +638,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-02T09:54:08+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-02T10:50:21+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2019年11月2日</p>
@@ -1162,7 +1176,7 @@
 </header>
 
     <div class="content pure">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\04\hello-world\" title="Hello World" rel="bookmark">Hello World</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\26\使用VMware搭建小型局域网\" title="使用VMware搭建小型局域网" rel="bookmark">使用VMware搭建小型局域网</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\05\AST-Task1\" title="AST Task1" rel="bookmark">AST Task1</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\04\hello-world\" title="Hello World" rel="bookmark">Hello World</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1232,7 +1246,7 @@
     。
   </div>
 <i class="fas fa-chart-area"></i>
-<span class="post-count">字数统计：20.1k</span>
+<span class="post-count">字数统计：20.3k</span>
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 <script>
     var now = new Date(); 
