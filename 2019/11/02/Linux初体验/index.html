@@ -610,7 +610,7 @@
 <p>在sys.c的末尾加入以下函数</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">asmlinkage <span class="keyword">void</span> <span class="title">sys_helloworld</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">  printk(“hello world”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://github.com/Zam-0703/Pictures/blob/master/img/%E4%BF%AE%E6%94%B9sys.c-2.png" alt="修改sys.c"></p>
+<p><img src="https://github.com/Zam-0703/Pictures/img/%E4%BF%AE%E6%94%B9sys.c-2.png" alt="修改sys.c"></p>
 <h3 id="修改头文件，增加系统调用声明"><a href="#修改头文件，增加系统调用声明" class="headerlink" title="修改头文件，增加系统调用声明"></a>修改头文件，增加系统调用声明</h3><p><strong>注意：我在修改之后的系统调用后才发现520已经被占，因此之后图里所有的520都被改成了436，也推荐大家以后新增调用时先去看看syscall_64.tbl文件的内容。</strong><br>使用命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ./include/uapi/asm-generic/unistd.h</span><br></pre></td></tr></table></figure>
 
@@ -638,7 +638,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-02T11:21:10+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-02T11:23:34+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2019年11月2日</p>
