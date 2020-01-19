@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>404 Not Found | Zam’s Blog</title>
+  <title>Jupyter的安装与使用 | Zam’s Blog</title>
   
   <meta name="keywords" content="Tech">
   
@@ -48,7 +48,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover page half'>
+    <cover class='cover post half'>
       
         
   <h1 class='title'>Zam's Blog</h1>
@@ -111,7 +111,7 @@
 
       
     </cover>
-    <header class="l_header no_sidebar pure">
+    <header class="l_header pure">
   <div id="loading-bar-wrapper">
     <div id="loading-bar" class="pure"></div>
   </div>
@@ -193,6 +193,8 @@
 			<a class="logo flat-box"></a>
 			<ul class='switcher h-list'>
 				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
         
 			</ul>
 		</div>
@@ -278,10 +280,10 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      <div class='l_main no_sidebar'>
+      <div class='l_main'>
   
 
-  <article id="page" class="post white-box article-type-page" itemscope itemprop="blogPost">
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
     
 
 
@@ -290,9 +292,78 @@
     
     <div class="meta" id="header-meta">
       
+        
+  
+    <h1 class="title">
+      <a href="/2020/01/19/Jupyter的安装与使用/">
+        Jupyter的安装与使用
+      </a>
+    </h1>
+  
+
+
+      
       <div class='new-meta-box'>
         
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://Zam-0703.github.io" rel="nofollow">
+        
+          <img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/avatar.png">
+        
+        <p>Zam</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-01-19</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
       </div>
+      
+        <hr>
       
     </div>
   </section>
@@ -300,16 +371,192 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h1 id="404-Not-Found"><a href="#404-Not-Found" class="headerlink" title="404 Not Found"></a><center><strong>404 Not Found</strong></center></h1><br>
+        <p>最近开始学习Python，但是臃肿的Visual Studio启动和编译速度极慢，直接使用命令行又没法保存我敲的代码。于是乎，我就想整一个又能即时保存我敲的代码，又能快速地运行Python程序，最好还能支持Markdown，让我能够边学习边做笔记。在经过了一番寻找过后，我找到了这款神器：Jupyter</p>
+<h1 id="Jupyter简介"><a href="#Jupyter简介" class="headerlink" title="Jupyter简介"></a>Jupyter简介</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Jupyter Notebook是一个Web应用程序，允许您创建和共享包含实时代码，方程，可视化和说明文本的文档。</span><br><span class="line">用途包括：数据清理和转换，数值模拟，统计建模，机器学习等等。</span><br></pre></td></tr></table></figure>
 
-<center>**很抱歉，您访问的页面不存在**</center>
-<center>可能是输入地址有误或该地址已被删除</center>
+<p>在Notebooks中不仅可以运行Python语言，它还支持R、Julia和Javascript等等语言。</p>
+<h1 id="安装Jupyter-Notebooks"><a href="#安装Jupyter-Notebooks" class="headerlink" title="安装Jupyter Notebooks"></a>安装Jupyter Notebooks</h1><h2 id="通过pip安装"><a href="#通过pip安装" class="headerlink" title="通过pip安装"></a>通过pip安装</h2><p>既然你都已经想要安装Jupyter了，那么我想Python总已经安装并配置好了吧。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注意：Python中默认安装的版本：</span><br><span class="line">Python 2.7.9及后续版本：默认安装，命令为pip</span><br><span class="line">Python 3.4及后续版本：默认安装，命令为pip3</span><br></pre></td></tr></table></figure>
 
-<br>
-<br>
+<h3 id="升级pip到最新版本"><a href="#升级pip到最新版本" class="headerlink" title="升级pip到最新版本"></a>升级pip到最新版本</h3><p>打开<code>cmd</code>，并切换到Python的安装目录下的Scripts文件夹，然后执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install --upgrade pip3</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Jupyter-Noteboooks"><a href="#安装Jupyter-Noteboooks" class="headerlink" title="安装Jupyter Noteboooks"></a>安装Jupyter Noteboooks</h3><p>接下来执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install jupyter</span><br></pre></td></tr></table></figure>
+
+<p>等待进度条跑完即可<br>（u1s1，pip是真的方便</p>
+<h3 id="运行Jupyter-Notebooks"><a href="#运行Jupyter-Notebooks" class="headerlink" title="运行Jupyter Notebooks"></a>运行Jupyter Notebooks</h3><p>切换到Python的安装目录下的Scripts文件夹。执行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
+
+<p>然后浏览器就会自动打开Notebook窗口。<br>但是此时你所创建的notebook文件都是放置在<code>你的Python安装目录\Script</code>下。之后会提到如何修改Jupyter Notebook的工作空间。</p>
+<h2 id="通过Anaconda安装"><a href="#通过Anaconda安装" class="headerlink" title="通过Anaconda安装"></a>通过Anaconda安装</h2><p>在安装<code>Anaconda</code>的同时会安装Python 和 Jupyter Notebooks这两个工具，并且还包含相当多数据科学和机器学习社区常用的软件包。<br>关于Anaconda的安装与使用，可以参考这个链接：<a href="https://www.jianshu.com/p/62f155eb6ac5" target="_blank" rel="noopener">Anaconda介绍、安装及使用教程</a><br>安装好了Anaconda后，可以直接在Anaconda的命令提示符界面输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
+
+<p>然后就可以食用Jupyter了</p>
+<h1 id="修改Jupyter-Notebook工作空间"><a href="#修改Jupyter-Notebook工作空间" class="headerlink" title="修改Jupyter Notebook工作空间"></a>修改Jupyter Notebook工作空间</h1><p>在我们第一次启动Notebooks时，默认显示的是Script文件夹下的文件目录。因为此时notebooks默认的工作空间是安装目录。<br>但是这样的话找起文件来比较麻烦。我们可以自己定义一个专属的工作空间</p>
+<h2 id="获取Jupyter-Notebook的配置文件"><a href="#获取Jupyter-Notebook的配置文件" class="headerlink" title="获取Jupyter Notebook的配置文件"></a>获取Jupyter Notebook的配置文件</h2><p>打开命令提示窗口，执行如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br></pre></td></tr></table></figure>
+
+<p>此处需要注意的是，如果你已经配置过notebooks的相关信息，执行此命令会提示你是否覆盖原有配置。输入y直接覆盖。如果是首次执行此命令，则生成配置到相应目录。</p>
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>打开生成的配置文件，修改<code>#c.NotebookApp.notebook_dir = &#39;&#39;</code>此条配置，在单引号中填入我们刚才创建的专属工作空间，此处我这里是E:\MyTools\Python\jupyter-notebook。<br>要注意的是，由于转义字符这种神奇的存在。所以你需要在字符串的单引号前加r，或者将单斜杠变为双斜杠，如下图所示。<br>此条配置默认是注释掉的，所以我们需要删除第一个#。ok,保存配置文件。<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E9%85%8D%E7%BD%AEJupyter.png" alt="配置Jupyter.png"><br>好了，现在打开命令提示窗口，执行<code>jupyter notebook</code>命令重新启动Notebook，浏览器相应会打开Notebook主页，主页中相应会显示工作空间中的文件目录。<br><strong><em>注意：启动notebook之后，不要关闭该命令提示窗口。一旦关闭该窗口Jupyter的本地服务器就会被关闭。</em></strong></p>
+<h1 id="Jupyter-Notebook-基本使用"><a href="#Jupyter-Notebook-基本使用" class="headerlink" title="Jupyter Notebook 基本使用"></a>Jupyter Notebook 基本使用</h1><h2 id="Jupyter界面"><a href="#Jupyter界面" class="headerlink" title="Jupyter界面"></a>Jupyter界面</h2><p>起订Notebook后，界面应该是这样的：<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/Jupyter%E7%95%8C%E9%9D%A2.png" alt="Jupyter界面"></p>
+<h3 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h3><ul>
+<li><code>Files</code>：列出所有文件</li>
+<li><code>Running</code>：展示你当前打开的终端和笔记本</li>
+<li><code>Clusters</code>：由 IPython 并行提供的<h3 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h3>点击右侧的New按钮可展开如图的下拉列表按钮，其内包括了可创建的四种工作环境：</li>
+<li><code>Python3</code>：创建一个可以执行Python代码的ipynb文件</li>
+<li><code>Text File</code>：创建文本类型的txt文件</li>
+<li><code>Folder</code>：创建一个文件夹</li>
+<li><code>Teminal</code>：在浏览器中打开一个命令窗口<h3 id="第三部分"><a href="#第三部分" class="headerlink" title="第三部分"></a>第三部分</h3>这里的按钮其实就是对当前工作空间内的文件进行一系列操作：</li>
+<li><code>Duplicate</code>：复制文件</li>
+<li><code>Rename</code>：重命名</li>
+<li><code>Move</code>：移动文件</li>
+<li><code>Download</code>：下载文件</li>
+<li><code>View</code>：在浏览器中预览文件内容</li>
+<li><code>Edit</code>：编辑文件</li>
+<li><code>Delete</code>(小图标)：删除选中的文件<h2 id="Jupyter-Notebook-中编写并执行Python代码"><a href="#Jupyter-Notebook-中编写并执行Python代码" class="headerlink" title="Jupyter Notebook 中编写并执行Python代码"></a>Jupyter Notebook 中编写并执行Python代码</h2>在首页右侧点击<code>New</code>，选择点击<code>Python3,</code>页面即跳转到一个新的窗口，此时已经创建了一个新的文件，红色区域为该文件的名称(默认为Untitled)，点击即可修改文件名，此处我们命名为Hello_World，如下图所示。<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/Jupyter_Demo1.png" alt="Jupyter_Demo1"><br>在<code>In [ ] :</code>后面的输入框中我们可以输入一段python代码进行测试，点击<code>Run</code>按钮执行,也可以快捷键<code>Ctrl+Enter</code>执行代码，结果如下:<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/Jupyter_Demo2.png" alt="Jupyter_Demo2"><br>Jupyter Notebooks 的强大之处在于除了能够输入代码之外，你还可以用 Markdown 添加叙述性和解释性文本。比如我想添加一个文字说明，在代码上面添加了一个单元格，并以 Markdown 输入了一个文本。<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/Jupyter_Demo3.png" alt="Jupyter_Demo3"><br>按下<code>Ctrl+Enter</code>，效果如下:<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/Jupyter_Demo4.png" alt="Jupyter_Demo4"><h2 id="Jupyter-Notebook-中的快捷键介绍"><a href="#Jupyter-Notebook-中的快捷键介绍" class="headerlink" title="Jupyter Notebook 中的快捷键介绍"></a>Jupyter Notebook 中的快捷键介绍</h2>当你熟练使用notebooks的基本功能后，掌握他的快捷键是十分必要的，这样可以大大提高你的工作效率。下面是一些比较常用的快捷键：</li>
+</ul>
+<p>编辑模式：点击单元格按下<code>Enter</code><br>命令模式（退出编辑模式)：按下<code>Esc</code></p>
+<p>进入命令模式之后（此时你没有活跃单元），有以下快捷键：</p>
+<ul>
+<li><code>A</code>：在所选单元之上插入一个新的单元</li>
+<li><code>B</code>：在所选单元之下插入一个新的单元</li>
+<li><code>D</code>：连续按两次删除所选的单元</li>
+<li><code>Z</code>：撤销被删除的单元</li>
+<li><code>Y</code>：将当前选中的单元变成一个代码单元</li>
+<li><code>F</code>：查找和替换</li>
+<li><code>Shift +上或下箭头</code>：可选择多个单元。</li>
+<li><code>Shift + M</code>：在多选模式时，可合并你的选择。</li>
+</ul>
+<p>处于编辑模式时（在命令模式时按 Enter 会进入编辑模式），下列快捷键很有用：</p>
+<ul>
+<li><code>Ctrl + Home</code>：到达单元起始位置</li>
+<li><code>Ctrl + S</code>：保存进度</li>
+<li><code>Ctrl + Enter</code>：会运行你的整个单元块</li>
+<li><code>Alt + Enter</code>：不止会运行你的单元块，还会在下面添加一个新单元</li>
+<li><code>Ctrl + Shift + F</code>：打开命令面板<br>可在命令模式按 H 或进入Help &gt; Keyboard Shortcuts。可以查看键盘快捷键完整列表。<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>关于Jupyter Notebooks的安装和基本用法就先介绍到这里就差不多了。</li>
+</ul>
 
       </div>
       
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-19T15:08:49+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2020年1月19日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Jupyter/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Jupyter</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Python</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://Zam-0703.github.io/2020/01/19/Jupyter的安装与使用/&title=Jupyter的安装与使用 | Zam’s Blog&pics=https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/avatar.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://Zam-0703.github.io/2020/01/19/Jupyter的安装与使用/&title=Jupyter的安装与使用 | Zam’s Blog&pics=https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/avatar.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3ay27cQAwEwP3/n3aAnBIEq3STM/YeSifDD2lKBky6ydcrvr5+X+8+8/XH9e6r//5sfr27z7ELDw8Pb3T0/NY59fkVJGfIn/L2/nh4eHjXeM/FYFYG8kMn90yKBB4eHt6n8do2N2+Cn8tAUpzw8PDwPpPXPmYWSbRlAw8PD++neEkY8fz4tlTkxeD5PMeyFjw8PLyY17a8n/DxxfkeHh4e3mKqng/12zLTjsqGZ8PDw8O7wEuG+pvBWB0crBe8XkkugoeHh7fmzfrSfFEgDwv2i1k1GA8PD6/kJc1rXh42bXSCacMRPDw8vO/htWOq9jvbMVtbkKI6g4eHh7fmJX/627ghLw/5wla9uICHh4d3gZfHsnmLnB+6DXaHzToeHh7eNd4+Gmib76RdnmXPeHh4eLd5m6FXEQ0swotTzToeHh7eKV4+lGoD2Tw42MfBr1lNw8PDw1vzZozZ0WflpI4q8PDw8L6Rl5eQ/FjJT+UlIfpfAQ8PD+8orx1KzcZdybXB/2czAg8PD+8ob9+2PrfFs8KQt+x19cPDw8Nb89qI4Zkxm7a1iwjPr+yvz+Dh4eFd4M0a5VmA2xaPlhFlLXh4eHiHePvRVP3H+tACVhFh4OHh4R3izQ69iV/zRnx/Kjw8PLwbvHbElYcU+1KRn6f4HeLh4eEd4rXLUnvMsYh2duHh4eGtebMoNm+1N+tWbYOOh4eH9/282eNnEUO7oDAsbHh4eHhHeV/l1Ta1eWzRrhQkrxgPDw/vBm9WSU7FvrMFgjbOwMPDw7vBm7XUmwWC5NW0z8XDw8P7ft6sGORrUrNyshna4eHh4X0mb9a57xcO8jvg4eHh/SxvFpjuS8Iq8sDDw8O7xts/OCkM+zg4LzN4eHh493j7AVhbBmbxxOa14uHh4R3i/QLSwGnOy1XX9QAAAABJRU5ErkJggg=='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://Zam-0703.github.io/2020/01/19/Jupyter的安装与使用/&title=Jupyter的安装与使用 | Zam’s Blog&pics=https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/avatar.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3ay27cQAwEwP3/n3aAnBIEq3STM/YeSifDD2lKBky6ydcrvr5+X+8+8/XH9e6r//5sfr27z7ELDw8Pb3T0/NY59fkVJGfIn/L2/nh4eHjXeM/FYFYG8kMn90yKBB4eHt6n8do2N2+Cn8tAUpzw8PDwPpPXPmYWSbRlAw8PD++neEkY8fz4tlTkxeD5PMeyFjw8PLyY17a8n/DxxfkeHh4e3mKqng/12zLTjsqGZ8PDw8O7wEuG+pvBWB0crBe8XkkugoeHh7fmzfrSfFEgDwv2i1k1GA8PD6/kJc1rXh42bXSCacMRPDw8vO/htWOq9jvbMVtbkKI6g4eHh7fmJX/627ghLw/5wla9uICHh4d3gZfHsnmLnB+6DXaHzToeHh7eNd4+Gmib76RdnmXPeHh4eLd5m6FXEQ0swotTzToeHh7eKV4+lGoD2Tw42MfBr1lNw8PDw1vzZozZ0WflpI4q8PDw8L6Rl5eQ/FjJT+UlIfpfAQ8PD+8orx1KzcZdybXB/2czAg8PD+8ob9+2PrfFs8KQt+x19cPDw8Nb89qI4Zkxm7a1iwjPr+yvz+Dh4eFd4M0a5VmA2xaPlhFlLXh4eHiHePvRVP3H+tACVhFh4OHh4R3izQ69iV/zRnx/Kjw8PLwbvHbElYcU+1KRn6f4HeLh4eEd4rXLUnvMsYh2duHh4eGtebMoNm+1N+tWbYOOh4eH9/282eNnEUO7oDAsbHh4eHhHeV/l1Ta1eWzRrhQkrxgPDw/vBm9WSU7FvrMFgjbOwMPDw7vBm7XUmwWC5NW0z8XDw8P7ft6sGORrUrNyshna4eHh4X0mb9a57xcO8jvg4eHh/SxvFpjuS8Iq8sDDw8O7xts/OCkM+zg4LzN4eHh493j7AVhbBmbxxOa14uHh4R3i/QLSwGnOy1XX9QAAAABJRU5ErkJggg=='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png">
+        
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/2019/11/26/AST-Task4/" rel="prev" title="AST-Task4">
+                                  
+                                      AST-Task4
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/C/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> C</a> <a class="tag" href="/tags/Learning/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Learning</a> <a class="tag" href="/tags/Data-Structure/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Data Structure</a> <a class="tag" href="/tags/Tree/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Tree</a> <a class="tag" href="/tags/Binary-Tree/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Binary Tree</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
       
     </section>
   </article>
@@ -344,6 +591,13 @@
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
 
+
+  <script>
+    window.subData = {
+      title: 'Jupyter的安装与使用',
+      tools: true
+    }
+  </script>
 
 
 </div>
@@ -436,6 +690,20 @@
           
             
               
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Jupyter简介"><span class="toc-text">Jupyter简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装Jupyter-Notebooks"><span class="toc-text">安装Jupyter Notebooks</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#通过pip安装"><span class="toc-text">通过pip安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#升级pip到最新版本"><span class="toc-text">升级pip到最新版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Jupyter-Noteboooks"><span class="toc-text">安装Jupyter Noteboooks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行Jupyter-Notebooks"><span class="toc-text">运行Jupyter Notebooks</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过Anaconda安装"><span class="toc-text">通过Anaconda安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#修改Jupyter-Notebook工作空间"><span class="toc-text">修改Jupyter Notebook工作空间</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#获取Jupyter-Notebook的配置文件"><span class="toc-text">获取Jupyter Notebook的配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改配置文件"><span class="toc-text">修改配置文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Jupyter-Notebook-基本使用"><span class="toc-text">Jupyter Notebook 基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jupyter界面"><span class="toc-text">Jupyter界面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一部分"><span class="toc-text">第一部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二部分"><span class="toc-text">第二部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三部分"><span class="toc-text">第三部分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jupyter-Notebook-中编写并执行Python代码"><span class="toc-text">Jupyter Notebook 中编写并执行Python代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jupyter-Notebook-中的快捷键介绍"><span class="toc-text">Jupyter Notebook 中的快捷键介绍</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </section>
+
 
             
           
@@ -709,6 +977,18 @@
           
             
               
+  <section class='widget related_posts'>
+    
+<header class='pure'>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;相关文章</div>
+  
+</header>
+
+    <div class="content pure">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\05\AST-Task1\" title="AST Task1" rel="bookmark">AST Task1</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\16\AST-Task2\" title="AST-Task2" rel="bookmark">AST-Task2</a></h3></div></li></ul>
+    </div>
+  </section>
+
 
             
           
@@ -904,11 +1184,9 @@ setInterval("createtime()",250);
     verify: verify,
     guest_info: guest_info,
     
-      path: "/404.html",
-    
     appId: "IaxMMAnVuk67VTjLMsPPlScb-gzGzoHsz",
     appKey: "X0ug2a0Yecjwyt47fJcBjLP1",
-    placeholder: "请留言告诉我您要访问哪个页面找不到了",
+    placeholder: "快来评论吧~",
     pageSize:'10',
     avatar:'mp',
     lang:'zh-cn',
