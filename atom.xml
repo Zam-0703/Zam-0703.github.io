@@ -59,13 +59,13 @@
     
       <category term="C" scheme="http://Zam-0703.github.io/tags/C/"/>
     
-      <category term="Learning" scheme="http://Zam-0703.github.io/tags/Learning/"/>
-    
-      <category term="Data Structure" scheme="http://Zam-0703.github.io/tags/Data-Structure/"/>
-    
       <category term="Tree" scheme="http://Zam-0703.github.io/tags/Tree/"/>
     
+      <category term="Learning" scheme="http://Zam-0703.github.io/tags/Learning/"/>
+    
       <category term="Binary Tree" scheme="http://Zam-0703.github.io/tags/Binary-Tree/"/>
+    
+      <category term="Data Structure" scheme="http://Zam-0703.github.io/tags/Data-Structure/"/>
     
   </entry>
   
@@ -115,11 +115,11 @@
     
       <category term="Learning" scheme="http://Zam-0703.github.io/tags/Learning/"/>
     
+      <category term="Data Structure" scheme="http://Zam-0703.github.io/tags/Data-Structure/"/>
+    
       <category term="Stack" scheme="http://Zam-0703.github.io/tags/Stack/"/>
     
       <category term="Queue" scheme="http://Zam-0703.github.io/tags/Queue/"/>
-    
-      <category term="Data Structure" scheme="http://Zam-0703.github.io/tags/Data-Structure/"/>
     
   </entry>
   
