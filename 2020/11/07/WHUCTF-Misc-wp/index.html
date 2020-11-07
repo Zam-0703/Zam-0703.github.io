@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.3.3'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>WHUCTF-Misc-wp - Zam’s Blog</title>
+  
+    <meta name="keywords" content="CTF,WriteUp">
+  
+  
+    <meta name="description" content="咕咕咕，一咕咕半年">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Zam’s Blog">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/avatar.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            ZAM'S BLOG <b><sup style='color:#3AA757'>2.3.3</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  
+    <h1 class="title">
+      <a href="/2020/11/07/WHUCTF-Misc-wp/">
+        WHUCTF-Misc-wp
+      </a>
+    </h1>
+  
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://zam-0703.githun.io" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/avatar.png">
+    <p>Zam</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：2.7k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：11分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年11月7日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>咕咕咕，一咕咕半年</p>
+<a id="more"></a>
+
+<h2 id="check-in"><a href="#check-in" class="headerlink" title="check-in"></a>check-in</h2><p>签到题，下载附件得到一个 <code>.git</code>  的文件夹，正常情况下文件夹被隐藏，显示隐藏后可以看到，百度可知这个 .<code>git</code>  文件夹是创建 git 仓库时部署在本地的一个类似目录的东西</p>
+<blockquote>
+<p>在 git 克隆代码之后，还不能直接使用 git，而需要初始化 git，它会自动创建 git 仓库需要的目录。这些文件存在于项目下的.git 文件夹下。</p>
+</blockquote>
+<p>有两种做法，一种是可以直接在 <code>.git</code>  文件夹所在目录进行 <code>git pull</code>  操作，得到 git 仓库中的文件，得到的文件直接就是 <strong>flag.txt</strong></p>
+<p>另一种方法，首先使用 <code>git log</code>  命令，查看这个文件夹的变动记录。可以看到有一条分支的 <code>add flag</code>  操作</p>
+<p>使用 <code>git reset --hard xxxx</code>  回退到该状态</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590718504847-2c1a74f0-0f13-473b-a805-5ee9b019f085.png#align=left&display=inline&height=377&margin=%5Bobject%20Object%5D&name=Chenkin%20%E5%9B%9E%E9%80%80%E7%89%88%E6%9C%AC.png&originHeight=377&originWidth=595&size=79032&status=done&style=none&width=595" alt="Chenkin 回退版本.png"></p>
+<p>然而文件夹中的 <code>flag.txt</code>  文件为一个假 flag……</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590718713379-37db0cae-dc65-415f-b602-e58357a8b74d.png#align=left&display=inline&height=153&margin=%5Bobject%20Object%5D&name=Chenkin_%E5%81%87flag.png&originHeight=153&originWidth=677&size=12886&status=done&style=none&width=677" alt="Chenkin_假flag.png"></p>
+<p>于是打开 <code>.git</code>  文件夹查看里面的内容，可以在 <code>config</code>  文件中看到远端的 github 仓库地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">url &#x3D; git@github.com:xinyongpeng&#x2F;whuctfflag.git</span><br><span class="line">fetch &#x3D; +refs&#x2F;heads&#x2F;:refs&#x2F;remotes&#x2F;origin&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>于是乎，直接打开 <code>github.com/xinyongpeng/whuctfflag/</code> ，就可以看到 <code>flag.txt</code>  点击就送 flag</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590718739118-647af1c1-4bf3-45d3-b56b-19d14e6d771e.png#align=left&display=inline&height=896&margin=%5Bobject%20Object%5D&name=Chenkin_githubflag.png&originHeight=896&originWidth=1920&size=225799&status=done&style=none&width=1920" alt="Chenkin_githubflag.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whuctf&#123;bc6cb6f4-1924-4683-a42c-cdc97653d2f6&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="过早了吗"><a href="#过早了吗" class="headerlink" title="过早了吗"></a>过早了吗</h2><p>下载附件，只有一个 <code>yummy.jpg</code>  文件，首先尝试使用 <code>stegdetect</code>  对其进行 <code>jpg</code>  隐写检测。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590719310826-3cab107a-6e61-4d56-a118-43ae81efd5b5.png#align=left&display=inline&height=49&margin=%5Bobject%20Object%5D&name=image.png&originHeight=49&originWidth=767&size=7791&status=done&style=none&width=767" alt="image.png"></p>
+<p>虽然 <code>stegdetect</code>  提示 jphide 加密，但是我们并没有密钥，爆破无果，最终放了这题。但是在赛后，发现使用 <code>steghide</code>  可以解出隐藏的内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">steghide extract -sf yummy.jpg</span><br></pre></td></tr></table></figure>
+
+<p>提示输入密码，但实际上不输入密码直接回车就可以导出隐写的内容</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590719493244-57c2ec06-8ae8-4168-aa50-4897f4c3589e.png#align=left&display=inline&height=69&margin=%5Bobject%20Object%5D&name=image.png&originHeight=69&originWidth=745&size=9155&status=done&style=none&width=745" alt="image.png"></p>
+<p>隐写的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ABAAABAABBABAAABAABAABAAAABBAAABBBBABBBABAAABBAABBAAAAAABBABBAABBBAABBABBBAAABAAAAAAABAABBAAAABBAAABAABAAAAAAAABABAAABABAAAAABAABABAABB</span><br></pre></td></tr></table></figure>
+
+<p>只有 <code>A</code>  和 <code>B</code> ，很明显的培根密码，在线解密一下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ITISIMPORTANTTOEATBREAKFAST</span><br></pre></td></tr></table></figure>
+
+<p>再包上 <code>whuctf{}</code>  即是 flag</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whuctf&#123;ITISIMPORTANTTOEATBREAKFAST&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="颜文字"><a href="#颜文字" class="headerlink" title="颜文字"></a>颜文字</h2><p>下载附件得到一个 zip 包，里面一个有一个加密的 zip 和一个 txt，txt 中是一大串的颜文字，很明显的 AAencode，在线网站解一下得到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我猜扫码得不到flag，但，也许呢？</span><br></pre></td></tr></table></figure>
+
+<p>再看加密的 zip 包，尝试解一下伪加密，修改两个加密标记位为 <code>00 00</code> ，就可以解除加密，得到里面的 png</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590720971688-2abdbfe6-e93a-4196-b509-297a0de3d0a9.png#align=left&display=inline&height=302&margin=%5Bobject%20Object%5D&name=%E9%A2%9C%E6%96%87%E5%AD%97_%E6%9B%B4%E6%94%B9%E5%8A%A0%E5%AF%86%E6%A0%87%E8%AE%B0.png&originHeight=302&originWidth=659&size=79865&status=done&style=none&width=659" alt="颜文字_更改加密标记.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590720978216-dec35112-c2fa-43b1-9058-969b3c84feb7.png#align=left&display=inline&height=146&margin=%5Bobject%20Object%5D&name=%E9%A2%9C%E6%96%87%E5%AD%97_%E6%9B%B4%E6%94%B9%E5%8A%A0%E5%AF%86%E6%A0%87%E8%AE%B02.png&originHeight=146&originWidth=650&size=35326&status=done&style=none&width=650" alt="颜文字_更改加密标记2.png"></p>
+<p>PNG 是一个反色而且缺了三个定位码的二维码，反色后补全</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590720993972-bc76b670-8e50-4e4e-9600-0f152161a7f8.png#align=left&display=inline&height=1058&margin=%5Bobject%20Object%5D&name=%E9%A2%9C%E6%96%87%E5%AD%97_%E4%BF%AE%E5%A4%8D%E4%BA%8C%E7%BB%B4%E7%A0%81.png&originHeight=1058&originWidth=1920&size=195920&status=done&style=none&width=1920" alt="颜文字_修复二维码.png"></p>
+<p>扫码后可以的到一个 B 站的个人空间链接：<a href="https://space.bilibili.com/309312103" target="_blank" rel="noopener">https://space.bilibili.com/309312103</a></p>
+<p>访问这个链接，发现这个是出题小姐姐，而且 <strong>唱歌很好听</strong>，在公告下方的个人信息处有个标签： <code>1234</code> </p>
+<p>再结合颜文字解密中 <strong>来找 key</strong>  的提示，推测这个 <code>1234</code>  为某种加密的密钥。</p>
+<p>由于附件中只给了一个 png 可以用来加密，再结合密钥，推测是那种需要密钥的 LSB 隐写。使用 <code>cloacked-pixel</code>  脚本解一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">py -2 lsb.py extract C:\Users\Zam-0\Downloads\颜文字\2333.png flag.txt 1234</span><br></pre></td></tr></table></figure>
+
+<p>可以得到一大长串的十六进制字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">280624EA44E4549400000000897970904967C98EF35F41000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D004584100000010E3AB410500000040AFEEA1043073CB59A255402E17B39FFA8D70D12DC49BCDEED74A993F3F3FC4EBF5E23400905FCD820A000000600A24A800000000A64002F870F9FE222626067C6665DAA5EFB66FD0BCFC7F696B6B1B4E8C8989A9545C5C090C108A012A08000000727D072A08000000727D340C04FD8D1D11824FA78392000020B9ED469FE3F454A3D9E4D9D7D7B6361C8A11FD8319BEC23B8472535B5B090461B87F818D0FA640D7EFFF47B9DC6E9EF83E8FAF57AFDF072F0030B79CF95595E023989235295AA4E10482C3C79CC1E87486258DE60370F5E14C861D8A6295DCD6D696361C8A01444AED2F77B3D92D966AB47BE64AF5B81FD710386023C3A11450279BD5A02FCBFA64A9B67C3B34792FEFF52A5DBA458C10DCFEF3F7F7967DD5028383A3178FCF471B0E4DA583AC7FE1546277E5DBE574388432F6F6D6E2DDAB895AEAFEDFFFFB0A051A950550AE6294A403B087D4ACC6E4F697BEBEBE546995E2DDABA8A6A6D6321C353FE5C3EE77B39CDA370C8FE3F02AA9A9A9577D1539A91E6891E1DBA7AA08631C445DBA558AF1B1843005E3158BBC5F53DC430DE185EF34FF66058D8DADD1A367FCFD5058587AF9FC7E041A243AE172360DD83E87EDC867B3D1120F8FA7D17E97EDD9A75FB3AC295DBA86562B11471E1D314B5BDDA75FECA3A1BCC2D89AC973B1D8ADE868B6343F3F3F74FAE52AED7BDA8E5BA6ADDFBA937B17DFD68D2FFC39140043ECA75FFE57E6CD3A4FE7F80D82058A6F6F6FA8DFF5BA4FA75FDE3D1BB0B0B074737343361B8D5F84A9DEEBFDE6081C38D4216FF2E5DBDAEF54A2453ABF2DB963D6AF62275DBA74F1ECDD22459A356AE266DD367B6FEFFD84C7E3E1D867BBD51038608BF8A5861787CBD572BC784484C7E3E17876769677DD7FA7D3A77F297BA2279FC7AB2222D3DBDB3ADDEE7FB4EBFEBB6D49949595A5501E87E5F8F6F6766B84AD6FDBFAB4D3E9ECD9F7F57D2AADADED3BF6D37E3F9F0DC1C1D1508FFB718EC0816341B9D66B2CD6047E81CBEF35DC56B465DA67A245EADCA55BBDE6DDBBF4451FA58B9A25EA5ACA21A4B037F8E5577EE9BCCA6050C90AFB61598B38D160FC72D6BD6B03BB8098D0B7484191FD1B1776AC3D20A05FE75D299BEC425626D55058F3E722B9465EE19AA60F8042A9E4D45009C5C8851B84101FFF6664C73A4990FAE15B4176F4C8BD4AC914C7974F29B5101629D54A0C5B1672603E09F249284D85A90B066FD45E1B66B06107BADC049E84287EE4030A6D6AC285FA7CE7E6239D4BAE337A946AA9BDBC5FF9E52312FB526D1B8B316BDEAD98AA37AC782BABB6E5D5BF60F9B08486C256850714E7E8170A99BC7E06C213531B057116FAF99CB3DA97C0D2E7FACD3B0C926C657C611771460DD59721DAE7B4CFAEC3D4A4F354ACB2BBBB0F0A6375992B10B21EFEC8155B204B399F1781F723569E931966BE02712533D4434E6F440ED833DAC6887726C040BC30137120DB44A2E1BDC64DD04983CB9A17658D7311EF16E60BDE23C83A3D2348608C876EA5230A8DD6E700AC071D3A6795566BA245EA3D66DCB2323F49647EE7F1478DC0A05FF46D77D557CDF0782ED78FD4A53CFD61C5FABDB42F0FC212FB233ED9184A0C358A9B6E62C39FF5DB561EF9167DA6CBBF5F9D5361F873F43860C9C4204D755818BEEA3A58981EF916FA14FA71D1AF67CFA6603EE74D15D91397718BD8A437F4A7D64F851B67955659330E15F763BCB7128E3339FAA0F2EBCB029ECD7750167FDEFD5B3F26F9DDE5A660AC53E52BC955BECDF5C2F6BDB412BEFAD6238CEFCE5BE6AB61A986F9172278CD056A852D65341882D8EC6C0945EBDFAFFDFB51F81EBF6E7B8CBCEAA7DEBD3B6583EB3F518382922BC5745AC68AEF6B8071E1B47EB3E6DD8A521B75CE1529202CFD8DF2594E05F5493F31969D242DF3E7DFDECF34FB2B72B2D767DE8D3E4C37B5156641CE9B2779B011F9C89C8AB1B895A6609576AD9CA2BFE9BF7FAEB0852850A8879B29BF95FEFBE7DE65DA3522CEB6509746385AFA04E18C46816AF046F2B571A46284568A010A56C934269BBE7BE6EF5FCEBBEAD26A9550D816EAD5E9B963B6137D2AC08BF818E9A9966BBC79C20D6D6C0E85FDD509E89544C33A9317D0FC31C76E15221E8FFCC3D0BD7BC471AD2FC81B133811AFED578E5E4DB865DAB70756CC851B67BF7F8EF69D76CFFAAD3ACD514047BA1018E56F20CC2AE36B7EE2C51AFB1F7A3F8AAA71E7E8A3D0767271A2CE803CD048B26158A87FFE8D0A8F4DD05CB1779573CDD58223C4DE4C1471D02D3366DCD12D0D672998E469CB1099CE9B276BF4DB6BDC04AA5300C6EA90336201776B9D8A91825DA7AC1730A0AE139FE5DC1B0B4F19B76BBD966905BE0ADE24975169A540371FF357413CD2382EAC442E7CD2E5F5A73F58D8683F392354E9984DC495DAA8856B2A8228545615FE9FF55B647FC3E0DDBB5719734E97FDFBF81E1859BBBCF4F89C3699B2ECCBE741D2E7F3A653061F8D26B57134757EF33E15D645C43E8846DB529D752E77C10FEC4262CA62D226E0A628D336A8DABAF016E6CB16D38F6B1982EDFF73A10BED1A8682DA26E15CFDC1548E4A772952F8E27C65DA65EFABFA75BA7AE5DB35F047C83FC3FCA4DBE5EA88984B2D53ABDDE66612F668F7A4EAEADA201E07ABF25FEFFBCCD33FFA22653C2A4369FCD3A75F436C872F737777867DB65B9F7E118C4EB79FF61ACFF3781E6B4AF07038CC39D984CCCCFCFBEAB42D4FDB586CCCF0C1F5EB60F47239BC614C2B40D82DBA7AACDFAAD35A267FB7DBFCA7A1A5A5D515C604198B451C3ECD88C2B5347DD5B6ECB7FED7FE7AE5DBB42C5C1BB67DD443BDA45CFB7B6FEF4659F8DCA75EBA655B09BDA2E57FDBFE41670E1781D5B6C71931FC3FCFCF630B8EB99469DB179999E9A9D09F837C11BF9960ABF673B95B65EAB259ACEFF2CA5246A97B275204D0179D9DBDF783F2B02CEF4895E730D57B7B6B50B94C4DA55E21FA95E6C2972B1BDD7D59B1BDDAB9C43BFFA21F207A31F985DEBD6BF07361297D8E51FC9785D206CDBE4CE4A90FD69DB66549969663226D8F41B93BC26BC2CF0B6B6D8F8228645E75FE2FFB27F89ADA5C637D297E882173A0E83F4E129639EB2E95F036BEA5945DA64FDE8F2B6D2ABF7F81231D7ABD3342EECF3536DB6CFC3B9E8238615CC35399C3D4ABB83E6571F32E8C772E6C180B0E0A2E3FC22E8E54498B533DD4130EFE21824A77291BDED047D9A7CE9B272A22D6D215E3756AB8051C3870ACAB846DBE57AB433D05508A17171786C081632BBF8E646C6C0D81036665DC07B265DA7EBDA0EFC787403CE9B3B3B31468B17FFD542E1F4781167AE58B587E16DB7E956FD7E9F9F7F726BFA3DAA59A63C64DBB67AED7DFDF2AA5A5A53EFEBBC23FECBD6FDFEBFBA7E8961A37CD7FC34B6B62D70BE833F4853B78F388BA6A84BB7A555D5DFA69FD575F5F0AC3E1F0143A641A255A155669F68E261783D95FB62357D21FE877BEA6FD6025B5F5C93F49AE57B395D7A12E26DA42F9C8AF64ECECDCA35FAE2B5AAF9D585C9D23D7E7E49F6454CAA302E69E9C9696E78E0A0CD8E71261CD347D0664812668BAE8D9A3A45DF8D89514531B8BB6C5479E4DBBBBBB7EC975AC9FF57433BE1A1773B8966966FF93765957159FFC6EA97211A7606C55568D7D9B6F56F0FBB12F3CFBFBA271F5CBCF243F99F4ACBBEAABC24F0DE520641F55E75FA134C8ACB7774CE59FE540D8AC2A5EFD1175C4D82FCCD70CCA2BBD433D34CF45C57D385CA3B8C1BE4C6A839BB1A79828FE786BD35696B87D433966BB61A9D67C33432EB7CCAA7F87B973A64262C954BE8A33BE7B4152ED8C3A7C7170FEA96F9529B62CBACAB9D41F312DE62F61D3EC57DE6AA2D3AECC38C61959AC5E4781166AE34B831B260A03063DFCD60D9E4FAF97FEDAD0A65D1A7B307DAFFFF5D4FB628901E7F01C9FFEB3F2F2D2A1ADAD4D475BDCD6D6967B7B6B88880B65F2BD23E2A2FE2B2F2F3DEAABE4AB8E6BBA784494EBF6B92DE4E4C44BF99E36C409E375FE9597205B9A577DC53FD9BFFB777EDBD0FA5B6FEB24514CFE5798D4434D09C281A44D181C1C1DF6DA5FEB081C387850E0FE77BB1A255A65599D9797967C3E1F2DEAEADAE1EDED6C050E8FFE5BEAB5B5B5D38E37E7F6DC0F0B75D3A74F8B7ED101E4A041C2A07D82CCC19B4A459740797EC33EC3FC33EC256B80ECECECDEB88FE456EA3F3F3F022D7F2222F7F49ECFE7BCD57272624DA04964D34A178FCFE7A5C41959A275FB1A9B9B9B3A7DFA34E4657DCABE7D37EFF7FCCCB29FB8373118A996F8C7EEDBA7CBBD28CF13E0F7E259C8EDF67354535343BE7DAAD3A75FE1DBA749EFF93D5F7CC20E0B0B9BCAC4ACBEEACBBA6375CE972F248D8691537CE4D9494C0D2FCFFBF2F32F7DD3A75FCAEFAF01EB712CFFC38EFFF13E8FF68E67BFD7AB522D9E47A347BEF9D57DBE5F3DE6DD8A033C9426B6CBFFF93F9E7DFAF5FD0E567541DA623C99948F9055FC54B87117330F151C46CF7ED977EEDFFDD56F56EC7E372A2204DAE730C867BD89E7F1784F3AF3415363CA9EAFE7F97E7D712FEFF5DE16F3F097BCC22B949C9C1D27C6D8461E1D31FEBFEFDF6CF2D021ED3123B82C3F7BE117CE78A49F4BBC9333CB3BD6AB82FF75F52BB07981DE5CF4B34D566F28B7EFA28BAEA397239650874F510EDF9FE0BB59D57C2FFB369C401B7C11A3BE1F51F6D85A35778BECFF4852AA3464D831408C3135560F1350304182C272FB1EEE9E093EA0BB1EDE3B0522F8776C690A35C82837B815C82E41A5159370FC900D45B226CB71BC1E75C0037D201B8FFB4991988A5182173759AAA6DA2B0F7067BDD6B29C89F6941BD26D75CDB69C4602D14A672EF959586F852A561437F9AC55AD9858286CCB069AAE8042E655D2E375CE976FE22CB7CFCFE2CBAAC0C4205935068F2B2340AC84AB6F3A552E90FEA8D3AA0F0A1371997BC69A7F0E39F5BB821C64690A7609FD0BAC53884131B80563E4B1FA3CFEA859B27BD5474F9F0347B116C785A32FA6AE7F6A264D716C0A451A6CF3D235FC582DE82D5D65619D61035EF989A12F54D88B7CF63C243D22BD0FE66BAC8931A2C38F67D009EF26D4D8CC29C864785A63C6DDEBDFBFF55B64CCC5BC897B0CDF4C6C558743FBE196AAA65C09E4B220EAA65D9A5FD6290DCA22084CF05BFE2E1FE653424928BBFEFD4AC145B1531C3660BEE061D0D804BAD274B58FC871C4A918ED557D85B472E70BCC94DA75397575FA0286D2049A443EFC59AF80218892E0D25AA2A9AFACE2B9AADC1FA62FAAD0EA3800D07913856856168EE2DC20CE82235C8EA517D4AFD0C5EB62993091528A71AEDFA833808913E3FFDC65FA2C0859D404FBE2B04671893AD670A1B888E067610AC70CB66116572ED21D4AEFF7305814E194A5655906C7A633AA8DA918ED745CE5A928A0903CC0330562B599988FAB6F44BE4D395C2F7D2C254D803C5968A71AB6C19B27ED7D93566968C3B5C42B8A907CE6573C64D8BCABEC966A3ABEC7B1FA17DDB221BC5E47AA7DD9E0DEBDFA613F3EC71BD47182CA9EC6B35C2E81A256686592D7DA40E4F530B4C33EB45FB65FE75F392EBD622CEBA5DCC6EBB33F2A9E55856D8F861D3A7219EA529F0D25B84CC637722AEFF6C11E689167FDE955538BF9FC3E12B6E060C4789F46C20491A1E6580615D77488B93105B3CCD6EAA245EA3C64D82050B989D57903FA9DDC26C123CEAB335144EF53205A7159A33FA4C97A11FEEC9FB896695510831A5EAF886B22343DB8D4E6E1BD015AD66CA1B03F95B630BE9FCDF0B9536B84A0B580FE0BC5815B2F56BFE7B271160070FC601A75DE1ADEBD6BFBA6D8403198D9B680D79655886D32FD14F1D9680BBE14D52B7D09142B6671FCA7D2684DA1C481E3A29876F1C5DC09B2D53905338415D76480B51187F2DC04AA936CEBE2E415A6408CCB81D858E7F5A72E0151978A9192C5465FF5590ACD16468B913B66DE23AC894259D7FB915CC69E44EE7381C904AA46BE8A4B28787DD50713073264D8E7936467F59110C55DBA6503F58A1BB3E261F44CBD14B9F99C2BC4AAB3272EFAAD3A2CF2150D247EA859B23B65DA661CD3BDD6149858C517C9A4A8C579514A62CF855A5CE9D054D6BCE5CECC9D4FF52CA0A9694632518F4DB017BD714D2737C575FBE7A66029B1E75330C3D96235B3F54950FD98187A6F9D8A319215FD40ACAAD78F3AD24CB792F0C3D36BAD5699939EF3BFE54DA79EDF6B4DA5EC33B0C975F7C517E8CDB4943C64D88D489DE75F1B2EBC1697663716F141866D2C23E5232E55C90D75F71EE83AE93FCD999FF51B74955F2A265CB84B851B67BA65EAFDE7DFF7BD71F72E960D229C23CCF9A8B2D96CEFF7D1FD53DCA55B9D6AA9D0A22EAAA79C930CB9B37F0EC3EF229746A96AF44C2BFBFB8178136A73CEEEC27EB9FD0A9F6F61EF36A4877E46F797CDE4F8134255C98D95F76342EE666401E7B79C17DAC08DAC2FCBFAF9F93CA1E164F6B96EEFEF6879B45A3DFAE5BBE42F2C3E1A966A6A7B47138BCDE6B1AFA4DF57BC65DA71A13BF8EC251B71DE99353535B4F376CEAF959D9D0E2877D547A8A6A6866D6D6DA857A3C9E0F5408956949D9DAD577DE4BCAB0E061C89874D0A061C7DDE15EA42BF8A3214FBE835AB45BB8F19EB736CAFD4DCDC6E650C9B9B9B7AE5DB56C726BC1C67036929977EB13FE7F6ADCC64FEA8A8DE0A58534A36C073C33ECBFEB3FDDF6FF3F83E8E78D7227ECDBFF9E1703C16C6C872044C07A52C51CD8C5D6768ECECDC606C6C9EB0FB07323E0562158F32785A433D35E44CFED93FEBD8433DF7D575BA5D1DD6D6F69669F6B8A4996AA9E95BC0E673B1290B6CE9971CCFF3782F17EA68EF92832E7AED2BC35EBA653A7DFA06B09F36F279E474F25ECFEB6866668659A245BBDDEE9E65DA45966AAAB8C971B0582D71161DB27FC197D9A62B4AF50C179AEE4A255AA4282626867633992DECECDCC2CECE0DEC76330A8989A9545C5C1A3D7AC7B0B8E3BF1F9418D23696D8AFA015EDBF25616171FAC5F0380EAF92D4FA1C29B2B5423A35DD3FE977FDFDCD2B9E4969AEA057F639BE6A3505E26CF4394EAF303838D872979F9FAAE14D141798C6BC7844086058A245BBC42B760E469FE3F4E9A3B1D5EA7D4444A3408C738E725D1B93CFE8BDC6A9A7A756BEF5A13ADC59C0810326B4CA3B94407F8F1936B3FDBFFFE72997C3D9214FDBF2D3DA7844D3D293E279B4F99E078E59BFE4C3EC4B15FA5E383200D6C8E874326DEAC9479E3D2FDD66247C6E69C617DAD2F4FDFE7F03EDBF35795E9FB7E77DD3A76F9D5350175DDCE50BDC2356A46C536DB7D3D98A3192823C2F2B6AEEEECE976867EDEDADD4438C4182358A6DA832D7D78CB9C4B0E57D5B8E7FB7DBED69D652FCF9F9F9E3051C38604AD0A0E97A9A8E3DD472F5F595AFA06B629B47DADFFB7B9E433DC05906A2311E1B94E1162DD5561F9E1A70381C9E7FEFFFFD949B9B3BFDD7737363D867BBD5103860E514B286252D2DFD21B5E8474F4F7D3F1E5FB6597A7A6A169FE6173F66567CA17DEC44CC9E4434EFF7FC9FF8FBC45959597AD557FCB3F5BEDFF74CF595E1706C10C43801C4CA225AB35DA2ABAB5BB9FDE0AC29F46C5CE495565B7E555FD7E5182458ADB759DBF6B58CF359CA7DC9792DAFF5449A25F9A9144C3A8EAFF34FC02FF1B711A46E5D69A9B66E5B4821A44D131B1B4BA459825F1D17178659A245A55BE6C5AF453DC43864D8449A25E9427BC1198C4EE797FCB7ED7FCC659A15265C343B3B6BAA8D47342F6D3E7ED9F93FEFF7A0737A2172982EB730F560C9843CD072942D23E7F49C8FBC55DDA75F5F7495C8FCB8DC5779FD4A37D433056205A2A16533EFF7FCEF97ACA7E97AAA125B8D7E0E252D2D1D5669F29D6C3793D9414D4D1DBE7DBBC42B49529D53EF07D3D7D78688F86095ACA6A6967DFA65EF68F4394EBF407E19B3D9ECDE023C2A028383A3939B9B0A0306EF18EB15E3140F8ABEAC0BD8A1D27ED3A75FFCE9D111A3AFAF0D82050A3EA5F23EFFB3F7FEDFEF8045EEDBA70A051A74D69B76CEDFF90A8383A3433D847BB5DABD41B9E547DFF3F4E2E34E44A459A257BE5DB937AD1921EEEEEE82D57ADE3B42D6437DC3CEEBF5E2069B99D3D2F4FD7FDF8E666666A6D38A119259E5DFB2D3E9EC1198749E0F073518BEAFEFFBE557D5D5A5D1A3779669C72F2C16F46ABCFDD7F81FEFF364A99642B4B3FAE53B97187070707ED97A3D9E6F1CA31168B1E577F97E9F8E479EDDEBD2AA34A9ED37F03C0F8FCEEB9239B9ED262E2E2DEEEEDEA1964AB0B0B04755E6933A1D8EDFCFAEFFF5BEAF50A05162DCA919265CD3AB5EBE7D8A6E6E6E080E0E8E033C62E9E9B92ABA17BCD1E87CE2A34E9A253A65DA051668C1F5C7199FCFEF474444BBDDEE4ED1A7ED9AB2B2B2242B2BEBA0EDAFE4E4D4FC0D5FAFDFF76BECD131437B93A65D7AEB489E3DFAEB983BCEBFF3E577D547E877B3F9FF0C3C1E0FAF6CC2957EC96F6F6F42BAE7C68CDACFA6C34C6A0AA4F8804C2ABDF52CCF0C5F7DE50E9F4BA8830BC6D91882E87D2300128FEB9069C7EF52090CE4D25E6EF570560FC97665B3D8EBBEA118EA937DB1F33F3E30C8A29950D8047DB1BA65C0A0AC0691422A7B954BBC80136B4B4A207C02052633467B3E980FA5B861DE5C6A6B829CFDA8105618B7984035E39069D89370DD2BEAF7693F193EA5D6568238608FF6796EA54DD36BBD9669653F466875DC5ABFEE852BB8C41ABE8F7ED540076F022B42A71795796C2FADA0CE9B273BD1D85A647C52D6BD5BCBF9EEC9F4E88B1668EAE20C3BF2A36CDEBDBA02289E3595F6B8379F97A99805EBC0780BCC287C5A27BCC29AF912A999F0263D65F036F736BFF54275E4B861D2608503A239D4535BA55BD67105A514E5D7ABF8F59E6C0841B37BE65B202C85D24C275B7801BB5335A769DAA5AA7E9B50447F3A84DB9E7496D57FFECD9905AFBE5AA71FD623CCA4DE79FEEAA143C6C18A37D453D287DBB4C6B9B826134A41610AA66A2F37F269970F5B3012578E36EABB67AEF94097EC72B4D17F5E6E96335A4BD2430D2F943FF541104136B3CA92A628ABB0217BE4BA65EA1D265C62A6DF13937C5653268848318F4DA0F03D1BBEEA6BA996F9181683B3626743CFD19775538CAA5F6929E532EA46B1A1071D3A67A996B86FDB4BBC5257AEB3EBABC69DBBD4B97356699584513E0DA45223EAB861E23D66DC97FA1E81B23CE8F697A996C9AC8F4D80458565524DA1D42675BCB1089E8C4B3D756BDB974994255A35E72CD3A79E8DDEBD4BCFBB8E33D4F0D5572BBCD20B1D3AE7722345ACB01C57FDE7DF379FC19B27CE884839CAA5969AC08F19A9A15BA6AAB2DA85066731381B35D2F4D5571B255A67BF7F8E96A64053A64DE1B5D887C2B3C42B75D526033CF0E561C3F5E4449A253A9DFAB8E145F3FBE779C1ED2F2BBCB7711FCB585E67DDBB046C6D80966AD8F82EF990DF29B66F9BBA657B994C5EBC5977AED5573D08FAFCB4F0D7F0FEFD7ADB57A55B67B96386FE0EA459A2E3AF966A9D56698D9A25BB51A275163A64DD8269DAA5DE433DA7E49B6AA99D5669ADC69DFB312AA5961A9C1D73E6DD83D9B4FEFD6B546D53A65DD74F13265CADDEBDDA049CE1EDD756A266DCA94F4EE6DDBB4B851B947FC32BBCD66BBDD6239CE31D93275E9D6AA9AFA7A95BA6CE3DD4F09860356881D6EBDFAF3493DB7EFEFDBB54B871966AB9D6BB67CE35B78C3CD07BD5576BDDBBE5C8F2F81BA245EA3D66DC16083D1BA143E65CA459ADDEBDFBFB1BB963E68C982B22D6433D935FE8DDBB456C102B532045A7C9BF11C3F4311DEC7E372A2262EDEDADD1A377964137E442CCCCDC43AFD7A3158E4F47BFDFEF8E6B6B6B033CA2A45E27AB95CE6F67EFBBF6BD6F4FB1B1B193F151606DB970740821CD3772399C9F7EF01FEFF3ADC800607F39E3A224F697FB7FEFFFFB08003078638DAEAFEBFA4444B47BE66AFDF67BB3E1D004182531B78CC9E472D6020000B8978CED73D89E7DD5222252F5BA5FD710386067C3A1186094D27C82AFE3F83FECB85C2E4E320C00A11471B7DBDD225CA82D907CE4D9B4E1D0540A1F54CB6EE4E4D4E3DFAF88883997CBDDA2AEAE3C840000A2ED27418245B9B9B91468911111232F2F3DFAE51A4E00647FD96BBD167352653E89EBF2B8BF9F5DA65DD46B9DE3EFEF3DF4F4D411000050B9EDA4ACAC2DDAA58A3DD462EDEDADC0038C6B6B6B6DC3A118D057EB6C71B0582DDEBD8A84000042ED3F7BBDDE2DE6E6D6232F2F2DE2E2D2E1DBA76FC3A118C0A4DCFEB2B6B6866A6A6A69676796767666A8A6A686479E4D440000A0F69760C0A152A459A35FAEFF0F600A149A91DB5EA65D8A5BA61D190E0000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D0045841000000004D801504000000D004680F0000000000ED2FFF7E820000000031D66B8DC47E233FE97693999D9DEE2DBBB0307F6F3BD97B99BCECEC7662778EE589F06FCD5BAD9B4B1AE25DA0B41B67411B436BEE2802A65D959B12A8EADC5282C5A02F43225E5F959653E5DD47CD964A824697501CA8B659DDD2D08056154D9060840E4AE962148343A2B313C456A71BCEB6A7F3740F709F7DC1B6DDDDDEC9874514449495F10000DDEC71D5564737160796E63500562716774766F6354785544711000000B1E0B259104CE000004CE0000037958407900000002B5429BB000000608008000000A620000025448494D0000000A0A1A0D074E40598</span><br></pre></td></tr></table></figure>
+
+<p>一开始看开头没有什么想法，翻到结尾发现是倒过来的 <code>89 50 4E 47</code> ，为 <code>PNG</code>  文件格式，所以写脚本翻转一下，写到 <code>PNG</code>  文件中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># py2</span></span><br><span class="line">f = open(<span class="string">'flag.txt'</span>,<span class="string">'r'</span>).read()[::<span class="number">-1</span>]</span><br><span class="line">fi = open(<span class="string">'flag.png'</span>,<span class="string">'w'</span>)</span><br><span class="line">fi.write(f.decode(<span class="string">'hex'</span>))</span><br><span class="line">fi.close()</span><br></pre></td></tr></table></figure>
+
+<p>得到一个图片，打开就是 <code>flag</code> </p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590735314217-d65aaa97-1712-426c-bf72-a63d020e13c8.png#align=left&display=inline&height=99&margin=%5Bobject%20Object%5D&originHeight=99&originWidth=583&size=0&status=done&style=none&width=583" alt=""></p>
+<h2 id="版权保护"><a href="#版权保护" class="headerlink" title="版权保护"></a>版权保护</h2><p>下载附件得到两个 txt 文件，查看 <code>题目描述.txt</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小p发现自己的文章被别人复制粘贴了，感到很气愤，于是他偷偷地将flag藏到了文章中，你能找到flag吗？ 格式 whuctf&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>再查看 <code>problem.txt</code> ，在 Windows 下能看到的里面都是重复的 <code>我很帅</code>  三个字，结合题名版权保护和题目描述，很容易想到出题人利用零宽度字符进行隐写（因为零宽度字符可以用来作为一种水印，可参考<a href="http://www.ga1axy.top/index.php/archives/20/" target="_blank" rel="noopener">这篇文章</a>），用 vim 查看</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590736038529-b7a3fb93-5f9e-4ec2-a77e-62370a6a6f3d.png#align=left&display=inline&height=631&margin=%5Bobject%20Object%5D&name=%E7%89%88%E6%9D%83%E4%BF%9D%E6%8A%A4vim%E6%9F%A5%E7%9C%8B.png&originHeight=631&originWidth=1129&size=69206&status=done&style=none&width=1129" alt="版权保护vim查看.png"></p>
+<p>可以很清楚的看到每两个字中间的零宽度字符数量相等，且数量都为 8，再结合只有两种字符，想到将其转换为 <strong>01 序列</strong> ，再每八个一组转换成对应的 ASCII 字符。<br>编写脚本如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'problem.txt'</span>,<span class="string">'r'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    str = f.read()</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    <span class="keyword">with</span> open (<span class="string">'output.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> o:</span><br><span class="line">        <span class="keyword">while</span> i &lt; len(str):</span><br><span class="line">            <span class="keyword">if</span> str[i] == <span class="string">'\u200d'</span>:</span><br><span class="line">                o.write(<span class="string">'0'</span>)</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> str[i] == <span class="string">'\u200c'</span>:</span><br><span class="line">                o.write(<span class="string">'1'</span>)</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> j == <span class="number">8</span>:</span><br><span class="line">                j = <span class="number">0</span></span><br><span class="line">                o.write(<span class="string">'\n'</span>)</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        o.close()</span><br><span class="line">    f.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'output.txt'</span>,<span class="string">'r'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> r:</span><br><span class="line">    strs = r.readlines()</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> strs:</span><br><span class="line">        character = chr(int(line[<span class="number">0</span>])*<span class="number">2</span>**<span class="number">7</span>+int(line[<span class="number">1</span>])*<span class="number">2</span>**<span class="number">6</span>+int(line[<span class="number">2</span>])*<span class="number">2</span>**<span class="number">5</span>+int(line[<span class="number">3</span>])*<span class="number">2</span>**<span class="number">4</span>+int(line[<span class="number">4</span>])*<span class="number">2</span>**<span class="number">3</span>+int(line[<span class="number">5</span>])*<span class="number">2</span>**<span class="number">2</span>+int(line[<span class="number">6</span>])*<span class="number">2</span>**<span class="number">1</span>+int(line[<span class="number">7</span>])*<span class="number">2</span>**<span class="number">0</span>)</span><br><span class="line">        print(character,end=<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590736173258-08e7ac6b-f880-4d26-b243-3bfdd7886cf5.png#align=left&display=inline&height=631&margin=%5Bobject%20Object%5D&name=%E7%89%88%E6%9D%83%E4%BF%9D%E6%8A%A4.png&originHeight=631&originWidth=1129&size=46353&status=done&style=none&width=1129" alt="版权保护.png"><br>得到 flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whuctf&#123;Y0u_kn0w_h0w_t0_pr0tect111&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="wechat-game"><a href="#wechat-game" class="headerlink" title="wechat_game"></a>wechat_game</h2><h3 id="快速解"><a href="#快速解" class="headerlink" title="快速解"></a>快速解</h3><p>下载附件，可以看出来是一个游戏，如果是明文 flag 的话，那一定是可以直接搜出来的，那么直接看 <code>txt</code>  这个文件夹，打开观察里面的内容，发现都是倒序的，比如</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  <span class="string">"thgieHrenni"</span>,</span><br><span class="line">  <span class="string">")53.0 ,0 ,0 ,0(abgr"</span>,</span><br><span class="line">  <span class="string">")53.0 ,812 ,822 ,832(abgr"</span>,</span><br><span class="line">  <span class="string">"redner"</span>,</span><br><span class="line">  <span class="string">"etadpu"</span>,</span><br><span class="line">  <span class="string">"evas"</span>,</span><br><span class="line">  <span class="string">"egamIward"</span>,</span><br><span class="line">  <span class="string">"egamI$gb"</span>,</span><br><span class="line">  <span class="string">"tceRdnuoRllif"</span>,</span><br><span class="line">  <span class="string">"dirGward"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>于是就推测 flag 的格式也是倒序的，所以直接在 txt 这个文件夹中 <code>strings</code>  命令搜索</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strings * | grep -i ftcuhw</span><br></pre></td></tr></table></figure>
+
+<p>发现有搜到的内容，直接把输出的内容全部复制出来，再搜索即可得到 flag 的逆序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#125;1m4g_tahcew&#123;ftcuhw</span><br></pre></td></tr></table></figure>
+
+<p>于是，逆序即可得到 flag</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whuctf&#123;wechat_g4m1&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="常规解"><a href="#常规解" class="headerlink" title="常规解"></a>常规解</h3><p>首先，使用微信开发者工具打开该工程，模拟运行，程序入口为<code>main.js</code>。分析<code>main.js</code>找到了分数变化的函数<br><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590737597600-17b4aa6c-670d-4b69-b2fa-942c13fa41ba.png#align=left&display=inline&height=472&margin=%5Bobject%20Object%5D&name=image.png&originHeight=472&originWidth=907&size=30728&status=done&style=none&width=907" alt="image.png"><br>子弹击中后会将分数加 1。根据题目提示，改为每次加一个很大的数，再次编译运行，结束后得到 flag<br><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590738136606-25e3f97b-4ec2-4f06-a6b7-4c007ebc0b62.png#align=left&display=inline&height=1058&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1058&originWidth=1920&size=493858&status=done&style=none&width=1920" alt="image.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whuctf&#123;wechat_g4m1&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="被汇编支配的恐惧"><a href="#被汇编支配的恐惧" class="headerlink" title="被汇编支配的恐惧"></a>被汇编支配的恐惧</h2><blockquote>
+<p>以下 wp 参考带师傅 Sinon</p>
+</blockquote>
+<p>拿到图片和一个加密的压缩包，先看图片，在详细信息中可以看到这样一句话</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我猜你是来找线索的，别爆破了，爆不出来的，因为密码有13位</span><br></pre></td></tr></table></figure>
+
+<p>然后结合小姐姐放的 <code>hint</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jpg文件末尾有几位关键信息</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>winhex</code>  打开图片。在图片末尾 <code>FF D9</code>  前可以看到 <code>ISBN</code>  这样的字样。联想 <code>ISBN</code>  号有 13 位数字，在结合图片的书名<br><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590739269870-c36ffcae-6715-40c2-972f-869f3dbe749f.png#align=left&display=inline&height=130&margin=%5Bobject%20Object%5D&name=image.png&originHeight=130&originWidth=575&size=47243&status=done&style=none&width=575" alt="image.png"><br>所以得到压缩包密码为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9787302333142</span><br></pre></td></tr></table></figure>
+
+<p>打开压缩包，其中有 100 张图片，刚好是<code>10x10</code>的规格，而且看缩略图也能发现当排列为 10*10 的时候恰好图案可以对上，所以拼图，将其拼起来，并栅格化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 商业转载请联系作者获得授权，非商业转载请注明出处。</span></span><br><span class="line"><span class="comment"># For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source.</span></span><br><span class="line"><span class="comment"># 协议(License)：署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</span></span><br><span class="line"><span class="comment"># 作者(Author)：Sinon</span></span><br><span class="line"><span class="comment"># 链接(URL)：https://dere.press/whuctf2020-writeup/#toc-head-36</span></span><br><span class="line"><span class="comment"># 来源(Source)：Sinon的编程小站</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> PIL</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"></span><br><span class="line">f_list = [Image.open(str(i) + <span class="string">'.bmp'</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">101</span>)]</span><br><span class="line">res = Image.new(mode=<span class="string">'RGBA'</span>, size=(<span class="number">100</span>, <span class="number">100</span>), color=(<span class="number">256</span>, <span class="number">256</span>, <span class="number">256</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">100</span>):</span><br><span class="line">    x_pos = (i % <span class="number">10</span>) * <span class="number">10</span></span><br><span class="line">    y_pos = (i / <span class="number">10</span>) * <span class="number">10</span></span><br><span class="line">    res.paste(f_list[i], (x_pos, y_pos))</span><br><span class="line"></span><br><span class="line">res.save(<span class="string">"out.png"</span>)</span><br><span class="line"></span><br><span class="line">a = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">100</span>)]</span><br><span class="line"><span class="keyword">for</span> pix <span class="keyword">in</span> itertools.product(a, a):</span><br><span class="line">    <span class="keyword">if</span> pix[<span class="number">0</span>] % <span class="number">4</span> == <span class="number">2</span> <span class="keyword">or</span> pix[<span class="number">0</span>] % <span class="number">4</span> == <span class="number">2</span>:</span><br><span class="line">        res.putpixel(pix, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">res.save(<span class="string">"out2.png"</span>)</span><br><span class="line">res.show()</span><br></pre></td></tr></table></figure>
+
+<p>最后猜出 flag 为<code>WHUCTF{GUANG_SH@N}</code></p>
+<h2 id="佛系青年-BingGe"><a href="#佛系青年-BingGe" class="headerlink" title="佛系青年 BingGe"></a>佛系青年 BingGe</h2><p>题目描述中一段佛曰加密</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">佛曰：般羅穆僧冥神大侄所隸奢尼哆恐侄大藐若故曳咒室呐阿竟諳他缽悉爍諦哆咒豆苦缽尼帝所冥等上哆瑟俱薩諸諳伊冥特諳實怯他罰不參亦皤有婆僧藝俱羯怯至皤滅知真哆訶亦能怯瑟梵陀奢知呼故梵夢死有皤能薩曰俱穆勝竟怯明奢參世缽佛皤羯瑟奢孕梵逝楞呐醯故奢想謹提諦盡侄阿哆利俱吉罰老謹涅神能皤集實輸奢薩奢數哆波者俱勝俱所遠盡呐倒利闍盧諦罰薩梵曰度提大諦哆穆輸醯怯參侄諸娑梵伽知勝穆伊顛冥參道冥有</span><br></pre></td></tr></table></figure>
+
+<p>在在线网站解密得到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">767566536773bf1ef643676363676784e1d015847635575637560ff4f41d</span><br></pre></td></tr></table></figure>
+
+<p>看到题目描述中写道  <strong>栅栏边上</strong> ，并且解密的到的字符串像是一串 16 进制字符串，于是联想到栅栏密码解码后再十六进制解码。多次尝试后当栅栏数为 6 时得到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7768756374667b6e305f315f616d5f6e30745f615f36756464683173747d</span><br></pre></td></tr></table></figure>
+
+<p>再十六进制解码，即可得到 flag：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whuctf&#123;n0_1_am_n0t_a_6uddh1st&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="shellOfAwd"><a href="#shellOfAwd" class="headerlink" title="shellOfAwd"></a>shellOfAwd</h2><p>以下 wp 来自带师傅</p>
+<blockquote>
+<p>出题思路：在虚拟机中开了一个 web 服务，将蚁剑的 base64 马拖进去，通过蚁剑的马上传一个冰蝎的马，执行 <code>ln -s /flag jquery.min.js</code> ,这样 <code>jquery.min.js</code> 就指向了 flag，读它就得到了 flag<br>其中 <code>ln -s /flag jquery.min.js</code> 在 AWD 中常用来维持权限，因为没人会管一个 js 文件。</p>
+</blockquote>
+<p>题目考点为冰蝎的加密流量分析<br>打开流量包，过滤 <code>http</code>  可以发现两条 <code>pass=xxx</code>  的流量，是冰蝎流量的特征<br><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590745195973-44526fbd-9067-4abd-9868-85780bd75c8a.png#align=left&display=inline&height=433&margin=%5Bobject%20Object%5D&originHeight=433&originWidth=1374&size=0&status=done&style=none&width=1374" alt=""><br>任选其中一条，追踪 TCP 流，在流中可以看到有两个返回的长度为 16 的字符串，这是冰蝎流量的解密密钥<br><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590745430182-2bc30964-03cb-4953-af2c-bc03f6ec1258.png#align=left&display=inline&height=750&margin=%5Bobject%20Object%5D&originHeight=750&originWidth=1149&size=0&status=done&style=none&width=1149" alt=""><br>我们在翻看 TCP 流的时候可以看到在 <code>Stream5</code>  之前都是蚁剑的 base64 加密流量，从 5 开始为冰蝎的加密流量，且密钥为<code>91ee1bfc4fd27c90</code><br>我们需要知道的是冰蝎通常采用 AES 加密，可以参考</p>
+<ul>
+<li><p><a href="https://cloud.tencent.com/developer/article/1552399" target="_blank" rel="noopener">冰蝎动态二进制加密 WebShell 基于流量侧检测方案</a></p>
+</li>
+<li><p><a href="https://xz.aliyun.com/t/6550" target="_blank" rel="noopener">红蓝对抗——加密 Webshell“冰蝎”攻防</a></p>
+</li>
+</ul>
+<p>将下面的流量解密，<a href="http://tools.bugscaner.com/cryptoaes/" target="_blank" rel="noopener">在线网站</a>即可<br><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590745590177-2f4d950f-0cd7-4528-85c0-8c58ac94003c.png#align=left&display=inline&height=615&margin=%5Bobject%20Object%5D&originHeight=615&originWidth=1184&size=0&status=done&style=none&width=1184" alt=""><br>得到 base64 加密的字符串，再次解密，得到一段 php 代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span><span class="params">($content)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $result = <span class="keyword">array</span>();</span><br><span class="line">    $result[<span class="string">"status"</span>] = base64_encode(<span class="string">"success"</span>);</span><br><span class="line">    $result[<span class="string">"msg"</span>] = base64_encode($content);</span><br><span class="line">    $key = $_SESSION[<span class="string">'k'</span>];</span><br><span class="line">    <span class="keyword">echo</span> encrypt(json_encode($result),$key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">encrypt</span><span class="params">($data,$key)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!extension_loaded(<span class="string">'openssl'</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;strlen($data);$i++) &#123;</span><br><span class="line">                 $data[$i] = $data[$i]^$key[$i+<span class="number">1</span>&amp;<span class="number">15</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            <span class="keyword">return</span> $data;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> openssl_encrypt($data, <span class="string">"AES128"</span>, $key);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;$content=<span class="string">"6ac0a2b1-e69e-463e-8f1d-f19474de887f"</span>;</span><br><span class="line">main($content);</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>$key</code>还是之前加密流量用到的<code>91ee1bfc4fd27c90</code>，可以看到代码中再次进行了<code>AES128</code>加密，所以如果想要知道服务器返回了什么数据，就需要对返回流量进行解密</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1118966/1590747335195-3a44779f-360b-4626-9200-09bcd564f44d.png#align=left&display=inline&height=305&margin=%5Bobject%20Object%5D&originHeight=305&originWidth=1254&size=0&status=done&style=none&width=1254" alt=""><br>同样用刚刚的网站即可解密，得到</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"status"</span>: <span class="string">"c3VjY2Vzcw=="</span>,</span><br><span class="line">  <span class="attr">"msg"</span>: <span class="string">"NmFjMGEyYjEtZTY5ZS00NjNlLThmMWQtZjE5NDc0ZGU4ODdm"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将其中的值解 base64，得到<strong>status</strong>的值为<strong>success</strong>，但<strong>msg</strong>的值并不是 flag，用同样的方法依次解密下面的流量，我们只需要挑这种比较短的流量尝试即可，而且密钥也和上述相同，最终在<strong>TCP 流 7</strong>的最下面找到 flag</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//$flag = "whuctf&#123;cd768eac-0746-4979-a40d-5b6a269c4dde&#125;"</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+            <br>
+            
+              
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=http://zam-0703.github.io/2020/11/07/WHUCTF-Misc-wp/>http://zam-0703.github.io/2020/11/07/WHUCTF-Misc-wp/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+
+
+            
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-07T10:41:23+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月7日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CTF/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>CTF</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/WriteUp/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>WriteUp</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：2.7k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：11分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://zam-0703.github.io/2020/11/07/WHUCTF-Misc-wp/&title=WHUCTF-Misc-wp - Zam’s Blog&summary=咕咕咕，一咕咕半年"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://zam-0703.github.io/2020/11/07/WHUCTF-Misc-wp/&title=WHUCTF-Misc-wp - Zam’s Blog&summary=咕咕咕，一咕咕半年"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://zam-0703.github.io/2020/11/07/WHUCTF-Misc-wp/&title=WHUCTF-Misc-wp - Zam’s Blog&summary=咕咕咕，一咕咕半年"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC7klEQVR42u3aSXLDMAwEQP//08k9S4kDQI4RN28qmxLZvEwBfHwYP44HAjBgwIABA2YNzKM4vs4/ff62kPD/p/PL+wEDBgwYMGDArIOZXsjVvKv3V9/T3g8YMGDAgAEDZi1MN9CdBq3q/NN55f2AAQMGDBgwYN4G5iqYnQa27u9gwIABAwYMGDDVgDe98G6wBAMGDBgwYMC8H0zaoOpeBKpeROo29sCAAQMGDBgw/wcmHd2N3f1c3g8YMGDAgAEDZg3M1DgFrBagnjXAgAEDBgwYMHtgTi/spEEpLhA1G3xjDTgwYMCAAQMGzBqY9MWnAW8aunohKD1AMGDAgAEDBswemPQFdwW8FPx4oyk4GDBgwIABA2YNTDXgdRd8uvBuoIzngQEDBgwYMGD+DUw1MKWFpTQIdr/TbriBAQMGDBgwYP4cJr1w86yG21SjLT54MGDAgAEDBsxamGoBaupiT/XAqoUrMGDAgAEDBsx+mG5h6TSY3TUvLWT9+gwGDBgwYMCAWQszXVCqNtSmgt7pOsCAAQMGDBgw+2C6C6wGrLsOoN2wAwMGDBgwYMCsgZlqpE3Pn2r8xd8FAwYMGDBgwKyDqRaUugHrNBhWG21xYAQDBgwYMGDArIGpfqAK1A14p7+nF4jAgAEDBgwYMPtg0sbYVCCLG2FFiFMQMGDAgAEDBsxemOrFnmqh6Fkbj9cBBgwYMGDAgFkLM91Iu+t/t60PDBgwYMCAAbMOZiqYpQtOLypNBdG4ggcGDBgwYMCAeTmY7phqqKVwKWDccAMDBgwYMGDAvDzMVMAbv8BzU6C8PBgwYMCAAQMGzDqYaqDqbnw6wFXXCwYMGDBgwIDZD1MNUOONr5sbbmDAgAEDBgwYMN3GWvp7GtjiAhoYMGDAgAED5m1gpgLZ9AWiMjwYMGDAgAEDZi1Mt4A0HcSqBarywYMBAwYMGDBg1sFUG1hpY607/7SQlR44GDBgwIABA2YfjAEGDBgwYMCAWTY+ATDx5Q6NQR9rAAAAAElFTkSuQmCC">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/04/20/2020%E2%80%9C%E7%BD%91%E9%BC%8E%E6%9D%AF%E2%80%9DHUST%E6%A0%A1%E5%86%85%E6%8E%92%E4%BD%8D%E8%B5%9B-%E9%83%A8%E5%88%86WriteUp/'>
+                <p class='title'>2020“网鼎杯”HUST校内排位赛-部分WriteUp<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>鲸！萌新的第一次正规CTF，竟然连签到题都没做出来！（Misc1出题人出来挨打
+题目好难，体验好差QAQ
+
+
+MISC菜题目描述是什么蒙蔽了我的双眼，倒数第四个字符是O，根据附件提示解出flag...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'WHUCTF-Misc-wp',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#check-in"><span class="toc-text">check-in</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过早了吗"><span class="toc-text">过早了吗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#颜文字"><span class="toc-text">颜文字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#版权保护"><span class="toc-text">版权保护</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wechat-game"><span class="toc-text">wechat_game</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#快速解"><span class="toc-text">快速解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常规解"><span class="toc-text">常规解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#被汇编支配的恐惧"><span class="toc-text">被汇编支配的恐惧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#佛系青年-BingGe"><span class="toc-text">佛系青年 BingGe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shellOfAwd"><span class="toc-text">shellOfAwd</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2888393918'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:Zam-0703@outlook.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/Zam-0703"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=247373745"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Zam's Blog</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+        <br>
+        <i class="fas fa-chart-area"></i>
+        <span class="post-count">字数统计：45.6k</span>
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        <script>
+            var now = new Date(); 
+            function createtime() { 
+                var grt= new Date("10/04/2019 16:00:00");//在此处修改你的建站时间
+                now.setTime(now.getTime()+250); 
+                days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+                document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+            } 
+        setInterval("createtime()",250);
+        </script>
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://zam-0703.githun.io" target="_blank" rel="noopener">Copyright © 2019-2020 Zam</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "IaxMMAnVuk67VTjLMsPPlScb-gzGzoHsz",
+    appKey: "X0ug2a0Yecjwyt47fJcBjLP1",
+    placeholder: "Write a Comment",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: 'true'
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+</html>
