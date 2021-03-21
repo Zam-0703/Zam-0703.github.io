@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.3.3'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Linux初体验 - Zam’s Blog</title>
+  
+    <meta name="keywords" content="Linux,syscall,Patch">
+  
+  
+    <meta name="description" content="用 VMware 安装Linux虚拟机，还可以顺带做网安组的 Task，美滋滋。">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Zam’s Blog">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/avatar.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            ZAM'S BLOG <b><sup style='color:#3AA757'>2.3.3</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  
+    <h1 class="title">
+      <a href="/2019/11/02/Linux%E5%88%9D%E4%BD%93%E9%AA%8C/">
+        Linux初体验
+      </a>
+    </h1>
+  
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://zam-0703.githun.io" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/avatar.png">
+    <p>Zam</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：6.2k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：24分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年11月2日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>用 VMware 安装Linux虚拟机，还可以顺带做网安组的 Task，美滋滋。</p>
+<a id="more"></a>
+
+<h1 id="安装准备"><a href="#安装准备" class="headerlink" title="安装准备"></a>安装准备</h1><h2 id="VMware-的安装"><a href="#VMware-的安装" class="headerlink" title="VMware 的安装"></a>VMware 的安装</h2><p>下载地址：<a href="https://www.nocmd.com/740.html" target="_blank" rel="noopener">https://www.nocmd.com/740.html</a><br>安装无脑下一步即可</p>
+<h2 id="Arch-Linux-镜像"><a href="#Arch-Linux-镜像" class="headerlink" title="Arch Linux 镜像"></a>Arch Linux 镜像</h2><p>下载地址：<a href="http://mirrors.zju.edu.cn/archlinux/iso/2019.10.01/" target="_blank" rel="noopener">http://mirrors.zju.edu.cn/archlinux/iso/2019.10.01/</a> （浙大源）<br>下载链接地址中的 archlinux-2019.10.01-x86_64.iso<br>若此地址下载缓慢，也可以进入官方的下载源集合：<a href="https://www.archlinux.org/download/" target="_blank" rel="noopener">https://www.archlinux.org/download/</a></p>
+<h1 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h1><h2 id="VMware-配置"><a href="#VMware-配置" class="headerlink" title="VMware 配置"></a>VMware 配置</h2><p>打开 VMware，首先点击文件选项 -&gt; 新建虚拟机 -&gt; 典型 -&gt; 稍后安装操作系统 -&gt; 选择 Linux 选项 -&gt; 版本选择‘Linux4.x’，内存按需分配就可以，硬盘分配 40G 左右，根据自己需求来定，毕竟 Arch 一开始还算一个比较干净简洁轻量的 Linux release。网络类型选择 NAT，其他默认即可。<br>CD/DVD 选项记得选择 ArchLinux 镜像。</p>
+<h2 id="Arch-Linux-安装准备"><a href="#Arch-Linux-安装准备" class="headerlink" title="Arch Linux 安装准备"></a>Arch Linux 安装准备</h2><h3 id="启动安装-archlinux"><a href="#启动安装-archlinux" class="headerlink" title="启动安装 archlinux"></a>启动安装 archlinux</h3><p>不论你使用的是 EFI 或 BIOS 引导，均选择 Boot Arch Linux(x86_64)这一选项<br>启动成功后就会进入命令行模式，此时如果你不清楚你用的是 EFI 引导还是 BIOS 引导，可以在此处列出 efivars 目录以验证启动模式来判断主板是以何种方式引导系统的（这对之后对硬盘的分区 <strong>十分有用</strong>）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls &#x2F;sys&#x2F;firmware&#x2F;efi&#x2F;efivars</span><br></pre></td></tr></table></figure>
+
+<p>若该目录不存在，系统就可能以 BIOS 模式启动。</p>
+<h3 id="确认网络连接情况"><a href="#确认网络连接情况" class="headerlink" title="确认网络连接情况"></a>确认网络连接情况</h3><p>如果你使用的是有线网络连接方式，那么 Arch Linux 在启动后，守护进程 dhcpcd 已被默认启用以探测有线设备，因此你只需验证网络是否正常即可<br>如果你使用的是无线网络连接方式，<br>Arch Linux 的安装必须使用网络才能完成，使用下面命令以验证网络是否正常：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -c 4 www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<p>如果网络不正常，可能是由于 dhcp 服务没有开启，可以使用以下命令来开启此服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable dhcpcd.service</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新系统时间"><a href="#更新系统时间" class="headerlink" title="更新系统时间"></a>更新系统时间</h3><p>首先还是验证一下系统的时间是否正常：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl status</span><br></pre></td></tr></table></figure>
+
+<p>如果时间和当前时间对不上的话，使用下面命令来更新系统时间：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl set-ntp true</span><br></pre></td></tr></table></figure>
+
+<h3 id="建立硬盘分区"><a href="#建立硬盘分区" class="headerlink" title="建立硬盘分区"></a>建立硬盘分区</h3><p>硬盘如果被系统识别到，就会被分配为一个块设备，如/dev/sda；因此先查看一下硬盘的状态，以便于后续分区操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure>
+
+<p>屏幕显示如下：<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/lsblk%E8%BE%93%E5%87%BA.jng" alt="lsblk输出"><br>这里 sda 即是我分配给虚拟机的 8GB 硬盘，因为此硬盘下还没有分区，所以 sda 节点下无任何显示；loop0 和 sr0 可以忽略。如果硬盘已经有分区，sda 节点下应当会显示如下图：<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E5%88%86%E5%8C%BA%E5%AE%8C%E6%AF%95%E5%90%8E%E6%98%BE%E7%A4%BA.png" alt="分区完毕后显示"><br>接下来我们要对这 8GB 的硬盘进行分区，能够创建分区的命令很多，如 fdisk，parted，cfdisk 等，这里使用 GUI 的 cfdisk 命令（在真机上分区时，请认真检查你的硬盘是否选择正确，如果你有多个硬盘，可能你要用来安装 Linux 的硬盘并不是如下所写的/dev/sda，而是/dev/sdb 也说不定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cfdisk &#x2F;dev&#x2F;sda</span><br></pre></td></tr></table></figure>
+
+<p>对于一个硬盘，以下三个分区是必须要有的：<br>··· 一个根分区（挂载在根目录） /<br>··· 如果 UEFI 模式被启用，你还需要一个 EFI 系统分区，或者是通过 BIOS 启动，那么你需要建立的是 BIOS boot 分区<br>··· Swap 可以在一个独立的分区上设置，也可以直接建立交换文件<br>其中，Swap 分区的大小应与你物理机/虚拟机的内存大小相同，EFI 分区通常为 300M，BIOS boot 分区通常为 1G</p>
+<p>具体 cfdisk 的使用命令，可以参考这篇文章：<a href="https://jingyan.baidu.com/article/ce09321bb922da2bff858fdd.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/ce09321bb922da2bff858fdd.html</a></p>
+<p>分好区后确认写入分区到硬盘，然后退出分区工具，再次使用 lsblk 查看一下，显示如下图：<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA.png" alt="硬盘分区"><br>那么你就成功分好区了</p>
+<h3 id="格式化分区"><a href="#格式化分区" class="headerlink" title="格式化分区"></a>格式化分区</h3><p>分区完成后，需要对分区做格式化处理，如果你使用了 EFI 分区，因为 EFI 分区需要 FAT32 文件格式，所以需要将其格式化为 FAT32 格式；<br>EFI 引导分区推荐大小为 512M。<br>在这里我使用的是 BIOS 引导，但为了方便起见，我也将它格式化成 FAT32 文件格式。<br>根分区格式化为 ext4 格式；设置并开启 Swap 分区：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 &#x2F;dev&#x2F;sda2</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sda3</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sda4</span><br><span class="line">mkswap &#x2F;dev&#x2F;sda1 -L Swap</span><br><span class="line">swapon &#x2F;dev&#x2F;sda1</span><br></pre></td></tr></table></figure>
+
+<h3 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h3><h4 id="EFI-模式引导"><a href="#EFI-模式引导" class="headerlink" title="EFI 模式引导"></a>EFI 模式引导</h4><p>格式化完成后，需要将分区挂载到 /mnt ，先挂载根分区（这里是/dev/sda2）；再挂载 EFI 分区（这里是/dev/sda1），挂载 EFI 分区时，需要在/mnt 上先创建 boot/EFI 目录，然后将 EFI 分区挂载到/mnt/boot/EFI 上；Sawp 分区不需要挂载：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount &#x2F;dev&#x2F;sda3 &#x2F;mnt</span><br><span class="line">mkdir -p &#x2F;mnt&#x2F;boot&#x2F;EFI</span><br><span class="line">mount &#x2F;dev&#x2F;sda2 &#x2F;mnt&#x2F;boot&#x2F;EFI</span><br></pre></td></tr></table></figure>
+
+<h4 id="BIOS-模式引导"><a href="#BIOS-模式引导" class="headerlink" title="BIOS 模式引导"></a>BIOS 模式引导</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount &#x2F;dev&#x2F;sda4 &#x2F;mnt        注：sda4挂载为根</span><br><span class="line">mkdir &#x2F;mnt&#x2F;boot        注：在 &#x2F;  分区中创建&#x2F;boot文件夹</span><br><span class="line">mkdir &#x2F;mnt&#x2F;home        注：在 &#x2F; 分区中创建home文件夹</span><br><span class="line">mount &#x2F;dev&#x2F;sda2 &#x2F;mnt&#x2F;boot    注：将sda2分区挂载到&#x2F;mnt&#x2F;boot文件夹内</span><br><span class="line">mount &#x2F;dev&#x2F;sda3 &#x2F;mnt&#x2F;home    注：将sda3分区挂载到&#x2F;mnt&#x2F;home文件夹内</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装基本系统"><a href="#安装基本系统" class="headerlink" title="安装基本系统"></a>安装基本系统</h2><h3 id="选择软件镜像源"><a href="#选择软件镜像源" class="headerlink" title="选择软件镜像源"></a>选择软件镜像源</h3><p>在安装基本系统之前，需要修改一下软件镜像源，不然安装基本系统时会安装不上。镜像源列表在 /etc/pacman.d/mirrorlist 文件中。</p>
+<p>我们选择软件镜像源时，最好选择国内的镜像源，因为国内网络环境的关系，选择其他国家或地区的镜像源，安装时可能很慢或失败也不一定。</p>
+<p>下面这段代码首先添加了阿里巴巴镜像源到一个新文件（此处为 mrlist），然后从 mirrolist 文件中选出所有国内镜像源追加到 mrlist 中，然后将 mirrorlist 文件的内容追加在 mrlist 的最后面，最后将 mrlist 重命名为 mirrorlsit：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">echo &#39;## China\nServer &#x3D; http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;archlinux&#x2F;$repo&#x2F;os&#x2F;$arch&#39; &gt; mrlist</span><br><span class="line">grep -A 1 &#39;China&#39; &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist|grep -v &#39;\-\-&#39; &gt;&gt; mrlist</span><br><span class="line">cat &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist &gt;&gt; mrlist</span><br><span class="line">mv mrlist &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist</span><br></pre></td></tr></table></figure>
+
+<p>执行完以上命令后，可以使用以下命令来查看 mirrorlist 文件是否修改成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist</span><br></pre></td></tr></table></figure>
+
+<p>按下 Ctrl+X 退出查看<br>若修改成功，会看到 mirrorlist 文件中的开头的内容全是国内的镜像源</p>
+<h3 id="开始安装系统"><a href="#开始安装系统" class="headerlink" title="开始安装系统"></a>开始安装系统</h3><p>修改完软件镜像源后，然后就可以开始安装系统了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacstrap -i &#x2F;mnt base base-devel vim linux linux-firmware</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意，在安装环节就需要安装 linux 和 linux-firmware 两个包，不然会导致内核没有安装导致 grub 引导失败进不去系统</strong><br>使用-i 选项会在实际安装前进行确认；安装 base-devel 组，可以让我们通过 AUR (简体中文) 或者 ABS (简体中文) 编译安装软件包，如果不需要通过 AUR 或 ABS 安装软件包，则只需要安装 base 组就可以了 。</p>
+<h2 id="配置系统"><a href="#配置系统" class="headerlink" title="配置系统"></a>配置系统</h2><h3 id="Fstab"><a href="#Fstab" class="headerlink" title="Fstab"></a>Fstab</h3><p>Linux 的文件结构是单个的树状结构。最顶部的为根目录，即/。在根目录下，分为多个子目录，包括/bin、/boot、/dev、/etc、/home、/lib、/media、/mnt、/opt、/proc、/root、/sbin、/tmp、/usr 和/var 等。<br>磁盘 Linux 分区都必须挂载到目录树中的某个具体的目录上才能进行读写操作，而 fstab 正是负责这一配置。</p>
+<p>因此，在基本系统安装完成后，用以下命令生成 fstab 文件 (用 -U 或 -L 选项设置 UUID 或卷标)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U &#x2F;mnt &gt;&gt; &#x2F;mnt&#x2F;etc&#x2F;fstab</span><br></pre></td></tr></table></figure>
+
+<p>然后使用以下命令检查一下生成的 fstab 文件是否正确：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano &#x2F;mnt&#x2F;etc&#x2F;fstab</span><br></pre></td></tr></table></figure>
+
+<p>如果生成的 fstab 文件正确，会看到之前分的 4 个分区的信息。</p>
+<h3 id="Chroot"><a href="#Chroot" class="headerlink" title="Chroot"></a>Chroot</h3><p>chroot 命令用来在指定的根目录下运行指令<br>切换到新安装的系统：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot &#x2F;mnt</span><br></pre></td></tr></table></figure>
+
+<p>chroot 之后，当前目录就变成为 / 。此步会自动进行创建初始的 ramdisk 环境，但是如果以后更改了内核配置了的话，最好使用一下命令再重新生成 ramdisk 环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkinitcpio -p linux</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置时区"><a href="#配置时区" class="headerlink" title="配置时区"></a>配置时区</h3><p>将系统时区设为东八区：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -sf &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Chongqing &#x2F;etc&#x2F;localtime</span><br></pre></td></tr></table></figure>
+
+<p>设置时间标准为 UTC，并调整时间漂移：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hwclock --systohc --utc</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-Locale"><a href="#配置-Locale" class="headerlink" title="配置 Locale"></a>配置 Locale</h3><p>locale 文件对系统的使用地区和语言等进行配置。在/etc/locale.gen 文件中进行配置。<br>locale.gen 是一个仅包含注释文档的文本文件。指定需要的本地化类型，只需移除对应行前面的注释符号（＃）即可，使用下面命令打开 locale.gen 文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano &#x2F;etc&#x2F;locale.gen</span><br></pre></td></tr></table></figure>
+
+<p>然后找到下面 2 项，去掉每项前面的#即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">en_US.UTF-8 UTF-8</span><br><span class="line">zh_CN.UTF-8 UTF-8</span><br></pre></td></tr></table></figure>
+
+<p>使用 locale-gen 命令生成 Locale 信息，并列出所有启用的 Locale：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locale-gen</span><br><span class="line">locale -a</span><br></pre></td></tr></table></figure>
+
+<p>最后创建 locale.conf 文件，并提交所要使用的本地化选项，然后使用 locale 命令显示当前正在使用的 Locale 和相关的环境变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo LANG&#x3D;en_US.UTF-8 &gt; &#x2F;etc&#x2F;locale.conf</span><br><span class="line">locale</span><br></pre></td></tr></table></figure>
+
+<p>/etc/locale.conf 用来配置整个系统所使用的 Loacle，而这也可以由用户通过用户自己的 <del>/.config/locale.conf （</del>表示当前用户的 Home 目录）来覆盖整个系统的 Locale 配置。<br>建立 /etc/skel/.config/locale.conf 文件，可以在新用户的建立（新用户的建立见下文）且同时创建用户主目录（useradd -m）时，自动应用其中的 Locale（会将此文件复制到新建用户的 ~/.config/locale.conf 中）。<br><em>不推荐此时设置任何中文 locale，因为这样做可能会导致 tty 显示乱码。</em></p>
+<h3 id="设置主机名"><a href="#设置主机名" class="headerlink" title="设置主机名"></a>设置主机名</h3><p>要设置主机名，创建 /etc/hostname 文件并将主机名写入该文件即可。我的主机名为 Zam-laptop：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo Zam-laptop &gt; &#x2F;etc&#x2F;hostname</span><br></pre></td></tr></table></figure>
+
+<p>然后配置主机名对应的 IP 到 /etc/hosts 中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano &#x2F;etc&#x2F;hosts</span><br></pre></td></tr></table></figure>
+
+<p>将其中的主机名改为你自己的主机名（我这里是 Zam-laptop）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1    localhost.localdomain    localhost</span><br><span class="line">::1          localhost.localdomain    localhost</span><br><span class="line">127.0.1.1    Zam-laptop.localdomain   Zam-laptop</span><br></pre></td></tr></table></figure>
+
+<h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><p>若使用有线网络的话，由于在 Base 包里已经不包括联网所需的程序，所以需要下载 dhcp 客户端:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S dhcpcd</span><br></pre></td></tr></table></figure>
+
+<p>若使用无线网络的话，则安装以下几个软件包（因为我使用的是虚拟机，并未验证过）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S iw wpa_supplicant dialog</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置-Root-用户密码"><a href="#设置-Root-用户密码" class="headerlink" title="设置 Root 用户密码"></a>设置 Root 用户密码</h3><p>设置 root 密码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
+
+<p>然后输入两次密码即可。</p>
+<h3 id="创建新用户"><a href="#创建新用户" class="headerlink" title="创建新用户"></a>创建新用户</h3><p>因为使用 root 用户登陆后，root 用户拥有系统的所有操作权限，这样对系统的操作非常不安全（如一不小心删库，你就要开始跑路），所以需要新建一个普通用户，让其对系统的操作受到一定限制，使用下面命令新建用户 zam：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -m -G wheel -s &#x2F;bin&#x2F;bash zam</span><br></pre></td></tr></table></figure>
+
+<p>命令解释：<br>-m：创建用户主目录（/home/[用户名]）<br>-G：用户要加入的附加组列表；此处将用户加到 wheel 组中，之后可以给这个组执行 sudo 命令的权限<br>-s：指定了用户默认登录 shell 的路径，此处设置为 bash 的路径<br>更多创建新用户的使用请查看官方 Arch Linux Wiki：<a href="https://wiki.archlinux.org/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a></p>
+<p>然后修改新创建用户的用户密码，和修改 Root 用户密码所使用的命令一样（只是需要指定要修改密码的用户名）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd zam</span><br></pre></td></tr></table></figure>
+
+<p>然后输入两次密码即可。</p>
+<p>以后大部分时间我们都将使用此普通用户来工作，但由于此用户的操作权限有限，有时会对很多操作带来不便，因此需要给该用户在某些情况下提权，这就需要允许该用户所在的 wheel 组有执行 sudo 命令的权限，此时需要修改 /etc/sudoers 文件 ，但请不要直接修改此文件，而是用下面的命令修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">visudo</span><br></pre></td></tr></table></figure>
+
+<p>使用上面命令打开 sudoers 文件后，删除 wheel 组前面的注释（#）即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## Uncomment to allow members of group wheel to execute any command</span><br><span class="line">%wheel ALL&#x3D;(ALL) ALL</span><br></pre></td></tr></table></figure>
+
+<p>若执行 visudo 时，提示找不到 vim，则请先安装 vim 后在执行上面的操作，执行下面指令安装 vim：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S vim</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装-grub"><a href="#安装-grub" class="headerlink" title="安装 grub"></a>安装 grub</h3><p>grub 是一个启动引导器，同时支持 EFI 和 BIOS 方式的启动。若使用的 UEFI 方式引导系统，则还需要安装 efibootmgr，如果是双系统的话，还需要安装 os-prober，且如果使用 Intel CPU 的话，则需要安装 intel-ucode 并启用 <a href="https://wiki.archlinux.org/index.php/Microcode_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">因特尔微码更新</a></p>
+<p><strong>嘤特尔微码更新并不是一定需要开启</strong></p>
+<ul>
+<li>微码<blockquote>
+<p>微码（microcode）就是由 Intel/AMD 提供的 CPU 固件。Linux 的内核可以在引导时更新 CPU 固件，而无需 BIOS 更新。处理器的微码保存在内存中，在每次启动系统时，内核可以更新这个微码。</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>这些来自 Intel/AMD 的微码的更新可以去修复 bug 或者使用补丁来防范 bug。例如前段时间爆出的<a href="https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV180002" target="_blank" rel="noopener">幽灵(Spectre)与熔断(Meltdown)</a>漏洞，就可以通过更新微码来解决</p>
+</blockquote>
+<ul>
+<li>因此，最好还是启用因特尔微码更新，以保证自己的数据安全</li>
+</ul>
+<p>因为我使用的是虚拟机和 BIOS 引导方式，因此只需要安装 grub：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub</span><br></pre></td></tr></table></figure>
+
+<p>然后，还需要将其安装到 BIOS boot 分区当中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-install --recheck &#x2F;dev&#x2F;sda</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：此处的 /dev/sda 后没有数字。<br>最后还需要生成一个 grub 的配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</span><br></pre></td></tr></table></figure>
+
+<h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><p>执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exit #退出chroot环境，切换到光盘系统</span><br><span class="line">reboot #重启系统</span><br></pre></td></tr></table></figure>
+
+<p>然后你就可以进入到 grub 的引导界面，选择 Arch Linux，enjoy it！</p>
+<h1 id="进阶安装"><a href="#进阶安装" class="headerlink" title="进阶安装"></a>进阶安装</h1><p>在重启之后，我们就已经成功地安装了 ArchLinux,但是这时系统处于一个非常精简的状态,为了日常使用,我们必须安装一些需要的组件,来完善我们的系统功能。</p>
+<h2 id="预先准备：启动-DHCP-服务"><a href="#预先准备：启动-DHCP-服务" class="headerlink" title="预先准备：启动 DHCP 服务"></a>预先准备：启动 DHCP 服务</h2><p>启动 dhcp 服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable dhcpcd.service</span><br></pre></td></tr></table></figure>
+
+<p>以确保后续的下载软件包操作能够正常进行</p>
+<h2 id="安装图形界面"><a href="#安装图形界面" class="headerlink" title="安装图形界面"></a>安装图形界面</h2><h3 id="安装-Xorg"><a href="#安装-Xorg" class="headerlink" title="安装 Xorg"></a>安装 Xorg</h3><p>Xorg 是 Linux 下的一个著名的开源图形服务，我们的桌面环境需要 Xorg 的支持。<br>执行以下命令安装 Xorg 及相关组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S xorg</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装-Deepin-Desktop-Environment（DDE）"><a href="#安装-Deepin-Desktop-Environment（DDE）" class="headerlink" title="安装 Deepin Desktop Environment（DDE）"></a>安装 Deepin Desktop Environment（DDE）</h3><p>作为国产的桌面操作环境，当然要滋磁一波<br>执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S deepin deepin-extra lightdm lightdm-deepin-greeter</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装其余实用软件"><a href="#安装其余实用软件" class="headerlink" title="安装其余实用软件"></a>安装其余实用软件</h3><p>deepin 还提供了解压、下载工具等实用工具的下载<br>执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S file-roller evince gedit thunderbird gpicview</span><br><span class="line">sudo pacman -S unrar unzip p7zip</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装桌面管理器-sddm"><a href="#安装桌面管理器-sddm" class="headerlink" title="安装桌面管理器 sddm"></a>安装桌面管理器 sddm</h3><p><em>经过某李姓学长提醒，了解了 sddm 和 lightdm 都是图形化的桌面管理器，因此若上面安装 deepin 时已经安装了 lightdm，接下来就不需要安装桌面管理器 sddm 了</em></p>
+<p>安装好了桌面环境包以后，我们需要安装一个图形化的桌面管理器来帮助我们登录并且选择我们使用的桌面环境，sddm 就是这样的一款管理器。<br>执行以下命令来安装 sddm：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S sddm</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置开机启动-sddm-服务"><a href="#设置开机启动-sddm-服务" class="headerlink" title="设置开机启动 sddm 服务"></a>设置开机启动 sddm 服务</h3><p>使用 systemctl 命令：<code>sudo systemctl enable sddm</code>来启用 sddm 开机自启<br>设置 lightdm 开机自启同理</p>
+<h3 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h3><p>到现在我们已经安装好了桌面环境，但是还有一件事情需要我们提前设置一下。由于我们之前使用的一直都是 netctl 这个自带的网络服务，而桌面环境使用的是 NetworkManager 这个网络服务，所以我们需要禁用 netctl 并启用 NetworkManager：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl disable netctl</span><br><span class="line">sudo systemctl enable NetworkManager</span><br></pre></td></tr></table></figure>
+
+<p>同时你需要安装工具栏工具来显示网络设置图标：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S network-manager-applet</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h3><p>重启之后就可以尽情地 enjoy 了</p>
+<h2 id="下载编译安装最新最鬼酷的-Linux-内核"><a href="#下载编译安装最新最鬼酷的-Linux-内核" class="headerlink" title="下载编译安装最新最鬼酷的 Linux 内核"></a>下载编译安装最新最鬼酷的 Linux 内核</h2><p>注：为了完成之后的 Patch 任务，我这里就下载 5.3 版本的内核。下载最新版的内核同理。<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%86%85%E6%A0%B8%E4%B9%8B%E5%89%8D.png" alt="编译安装内核之前"></p>
+<h3 id="下载内核"><a href="#下载内核" class="headerlink" title="下载内核"></a>下载内核</h3><p>首先，我们当然要先去把内核下载到虚拟机中</p>
+<p>由于某些特殊原因，国内访问国外的 Kernel.org 速度偏慢<br>那么就需要从国内的开源镜像站去下载内核<br>地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/kernel/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/kernel/</a></p>
+<p>然后根据自己的喜好找到自己需要的内核，使用 wget 命令下载，并将其解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;kernel&#x2F;v5.x&#x2F;linux-5.3.tar.xz</span><br><span class="line">xz -d linux-5.3.tar.xz</span><br><span class="line">tar -xvf linux-5.3.tar</span><br></pre></td></tr></table></figure>
+
+<h3 id="编译内核"><a href="#编译内核" class="headerlink" title="编译内核"></a>编译内核</h3><p>进入解压好的源码的根目录下，如果需要自定义选项，就执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make menuconfig</span><br></pre></td></tr></table></figure>
+
+<p>会进入一个菜单，让你定制你自己的内核。<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E5%AE%9A%E5%88%B6Kernel.png" alt="定制Kernel"><br>当然，你也可以使用缺省配置，执行以下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zcat &#x2F;proc&#x2F;config.gz &gt; .config #将当前内核的配置文件复制到此处</span><br></pre></td></tr></table></figure>
+
+<p>并且不要忘记在 General Setup —&gt; 选项中或者复制来的 config 文件的”CONFIG_LOCALVERSION”一行的值来修改内核版本，这样可以避免编译的内核覆盖当前内核文件。<br>这样内核已经配置好了，下面就可以开始编译了<br>编译命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j 线程数</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装内核模块"><a href="#安装内核模块" class="headerlink" title="安装内核模块"></a>安装内核模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make modules_install ##把所有编译好的模块安装到正确的主目录&#x2F;lib&#x2F;modules下</span><br></pre></td></tr></table></figure>
+
+<p>该命令将编译好的模块拷贝至 /lib/modules/<kernel version>-<config local version>，例如 /lib/modules/3.18.28-ARCH。这样，这些模块和那些被你电脑上其他内核使用的模块就独立开来。</p>
+<h3 id="拷贝内核到-boot-目录"><a href="#拷贝内核到-boot-目录" class="headerlink" title="拷贝内核到 /boot 目录"></a>拷贝内核到 /boot 目录</h3><p>内核编译完成后会生成内核的 bzImage (big zImage) 文件，根据系统架构，将此文件复制到 /boot 目录，以 5.3 内核为例：</p>
+<p>32-bit (i686) kernel:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -v arch&#x2F;x86&#x2F;boot&#x2F;bzImage &#x2F;boot&#x2F;vmlinuz-linux53</span><br></pre></td></tr></table></figure>
+
+<p>64-bit (x86_64) kernel:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -v arch&#x2F;x86_64&#x2F;boot&#x2F;bzImage &#x2F;boot&#x2F;vmlinuz-linux53</span><br></pre></td></tr></table></figure>
+
+<h3 id="制作初始化内存盘"><a href="#制作初始化内存盘" class="headerlink" title="制作初始化内存盘"></a>制作初始化内存盘</h3><p>自动生成<br>复制和修改 mkinitcpio preset，就能用官方内核一样的方式生成自定义内核的 initramfs 镜像。下面例子中将已有的 preset 复制到 linux53 要使用的文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp &#x2F;etc&#x2F;mkinitcpio.d&#x2F;linux.preset &#x2F;etc&#x2F;mkinitcpio.d&#x2F;linux53.preset</span><br></pre></td></tr></table></figure>
+
+<p>针对定制内核编辑和修改此文件，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim &#x2F;etc&#x2F;mkinitcpio.d&#x2F;linux53.preset</span><br></pre></td></tr></table></figure>
+
+<p>ALL_kver= 应该和定制内核匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;mkinitcpio.d&#x2F;linux53.preset</span><br><span class="line">...</span><br><span class="line">ALL_kver&#x3D;&quot;&#x2F;boot&#x2F;vmlinuz-linux53&quot;</span><br><span class="line">...</span><br><span class="line">default_image&#x3D;&quot;&#x2F;boot&#x2F;initramfs-linux53.img&quot;</span><br><span class="line">...</span><br><span class="line">fallback_image&#x3D;&quot;&#x2F;boot&#x2F;initramfs-linux53-fallback.img&quot;</span><br></pre></td></tr></table></figure>
+
+<p>用官方内核一样的方式生成 initramfs 镜像：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkinitcpio -p linux53</span><br></pre></td></tr></table></figure>
+
+<h3 id="拷贝-System-map"><a href="#拷贝-System-map" class="headerlink" title="拷贝 System.map"></a>拷贝 System.map</h3><p>将 System.map 复制到 /boot, 然后创建 /boot/System.map 软链接到 /boot/System.map-YourKernelName:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp System.map &#x2F;boot&#x2F;System.map-YourKernelName</span><br><span class="line">sudo ln -sf &#x2F;boot&#x2F;System.map-YourKernelName &#x2F;boot&#x2F;System.map</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新-grub-配置信息"><a href="#更新-grub-配置信息" class="headerlink" title="更新 grub 配置信息"></a>更新 grub 配置信息</h3><p>使用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</span><br></pre></td></tr></table></figure>
+
+<p>来把我们刚刚配置好的内核添加到 grub 的启动配置中</p>
+<h3 id="然后-reboot-就可以享受最新（更老）的-kernel-了！"><a href="#然后-reboot-就可以享受最新（更老）的-kernel-了！" class="headerlink" title="然后 reboot 就可以享受最新（更老）的 kernel 了！"></a>然后 reboot 就可以享受最新<del>（更老）</del>的 kernel 了！</h3><p><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E5%86%85%E6%A0%B8%E4%B9%8B%E5%90%8E.PNG" alt="编译安装内核之后"></p>
+<h2 id="Patch-自己的内核"><a href="#Patch-自己的内核" class="headerlink" title="Patch 自己的内核"></a>Patch 自己的内核</h2><p>说实话，一开始看到要 patch 自己的内核，能够给出现象证明你的 patch 有效，我的心就拔凉拔凉的<br>Kernel 里那么多东西，我咋看的过来哪些能改哪些不能改，改了会有什么效果啊我透……<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/29412e0a494585b8.jpg" alt=""><br>后来转念一想，Patch 最显著的现象不就是版本号升级了吗？！<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/90455D42F926AF850A7ED03D05D614AB109D2.jpg" alt=""><br>于是就有了之前反向升级最新内核的操作</p>
+<h3 id="下载-Patch"><a href="#下载-Patch" class="headerlink" title="下载 Patch"></a>下载 Patch</h3><p>地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/kernel/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/kernel/</a><br>依旧是打开那个熟悉的地址，然后找到自己对应的 patch 包，用 wget 命令下载即可。<br><strong>注意：如果你想跨版本升级，例如说现在是 5.3，想要升级到 5.3.8 的内核，可以一步到位从 5.3 这个大版本用 patch-5.3.8 升级至 5.3.8</strong></p>
+<h3 id="解压-Patch"><a href="#解压-Patch" class="headerlink" title="解压 Patch"></a>解压 Patch</h3><p>使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xz -d patch-5.3.1.xz</span><br></pre></td></tr></table></figure>
+
+<p>即可</p>
+<h3 id="安装-Patch"><a href="#安装-Patch" class="headerlink" title="安装 Patch"></a>安装 Patch</h3><p>将解压出的 Patch 文件放在你想要打 Patch 的源代码文件夹的 Kernel 目录下 <strong>重要</strong></p>
+<p>为确保内核树绝对干净，执行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make clean &amp;&amp; make mrproper</span><br></pre></td></tr></table></figure>
+
+<p>注意：由于 patch 文件中的文件路径包含了它所基于的内核源文件目录的名字(或者像是”a/“和”b/“之类的其它名字)。这很可能和你本地机器上的内核源代码目录的名字不匹配。你应该切换到你的内核源代码目录，并且在打补丁的时候去掉 patch 中文件名字路径的第一个分量(patch 命令的-p1 参数可以完成这个任务)。<br>因此我们在 Kernel 目录下直接执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch -p1 &lt; .&#x2F;patch-5.3.8.patch</span><br></pre></td></tr></table></figure>
+
+<p>其余的 patch 文件依样画瓢即可</p>
+<h3 id="编译-Patch-后的内核以及之后的步骤"><a href="#编译-Patch-后的内核以及之后的步骤" class="headerlink" title="编译 Patch 后的内核以及之后的步骤"></a>编译 Patch 后的内核以及之后的步骤</h3><p>这个就和之前的差不多，就不再叙说了~</p>
+<h2 id="制作自己的-Patch-文件并打-Patch。"><a href="#制作自己的-Patch-文件并打-Patch。" class="headerlink" title="制作自己的 Patch 文件并打 Patch。"></a>制作自己的 Patch 文件并打 Patch。</h2><p>经过某李姓学长的提醒，我明白了这个任务其实是要我们自己动手修改 kernel 内核。<br>那么最简单的修改方法就是添加一个系统调用。</p>
+<h3 id="修改源程序，增加系统调用实现"><a href="#修改源程序，增加系统调用实现" class="headerlink" title="修改源程序，增加系统调用实现"></a>修改源程序，增加系统调用实现</h3><p>假设你现在已经下好了 kernel 源文件并解压。在解压出的源代码文件夹内执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .&#x2F;kernel&#x2F;sys.c</span><br></pre></td></tr></table></figure>
+
+<p>在 sys.c 的末尾加入以下函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">asmlinkage <span class="keyword">void</span> <span class="title">sys_helloworld</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">  printk(“hello world”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/Zam-0703/Pictures/master/img/%E4%BF%AE%E6%94%B9sys.c-3.png" alt="修改sys.c"></p>
+<h3 id="修改头文件，增加系统调用声明"><a href="#修改头文件，增加系统调用声明" class="headerlink" title="修改头文件，增加系统调用声明"></a>修改头文件，增加系统调用声明</h3><p><strong>注意：我在修改之后的系统调用后才发现 520 已经被占，因此之后图里所有的 520 都被改成了 436，也推荐大家以后新增调用时先去看看 syscall_64.tbl 文件的内容。</strong><br>使用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .&#x2F;include&#x2F;uapi&#x2F;asm-generic&#x2F;unistd.h</span><br></pre></td></tr></table></figure>
+
+<p>来添加系统调用的声明<br>在文件的最末尾处添加如下代码：<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E6%B7%BB%E5%8A%A0%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E5%A3%B0%E6%98%8E.png" alt="添加系统调用声明"><br>再使用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .&#x2F;include&#x2F;linux&#x2F;syscalls.h</span><br></pre></td></tr></table></figure>
+
+<p>在文件的最末尾处添加如下代码：<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E6%B7%BB%E5%8A%A0%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E.png" alt="添加函数声明"></p>
+<h3 id="注册系统调用"><a href="#注册系统调用" class="headerlink" title="注册系统调用"></a>注册系统调用</h3><p>进入<code>/arch/x86/entry/syscalls</code>目录<br>可以看到以下内容：<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/syacalls%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E5%AE%B9.png" alt="syacalls文件夹内容"><br>32 位系统就添加到 syscall_32.tbl，64 位就修改 syscall_64.tbl<br>我这里是 64 位，因此我应该修改 syscall_64.tbl。<br>按着顺序往下添加即可，中间使用 Tab 键分隔。如图所示：<br><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/436.png" alt=""></p>
+<h3 id="生成-Patch-文件"><a href="#生成-Patch-文件" class="headerlink" title="生成 Patch 文件"></a>生成 Patch 文件</h3><p>在这里，我就假设你已经修改好了文件。<br>比如基于 kernel 内核 做了修改，修改前的内容放在文件夹 kernel 下，修改后的内容放在文件夹 kernel_new 下，并且两个目录在同级的文件夹里，那么制作 patch 文件的命令为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff -Naur kernel&#x2F;    kernel_new&#x2F; &gt; new.patch</span><br></pre></td></tr></table></figure>
+
+<p>然后接下来的步骤和上面的 <strong>安装 Patch</strong> 部分相同，不再赘述。</p>
+<h3 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h3><p><img src="https://cdn.jsdelivr.net/gh/Zam-0703/Pictures/img/%E6%BA%90%E4%BB%A3%E7%A0%81%E4%BB%A5%E5%8F%8A%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E5%90%8Edmesg%E7%BB%93%E6%9E%9C.png" alt="源代码以及程序运行后dmesg结果"></p>
+<h1 id="几个踩坑的点"><a href="#几个踩坑的点" class="headerlink" title="几个踩坑的点"></a>几个踩坑的点</h1><h2 id="一开始只安装了-Base-包"><a href="#一开始只安装了-Base-包" class="headerlink" title="一开始只安装了 Base 包"></a>一开始只安装了 Base 包</h2><p>网上的远古教程指导我说安装了 Base 包就行了，然而 Arch Linux 似乎把 Linux 内核从 Base 包当中分离了出来，所以一开始只安装 Base 包导致 grub 找不到内核一直引导失败。<br>这个惨痛的经历告诉我们，以后不管装什么，<strong>都要看官方 wiki</strong>，避免踩坑。</p>
+<h2 id="在编译内核时-config-文件没有配置好"><a href="#在编译内核时-config-文件没有配置好" class="headerlink" title="在编译内核时 config 文件没有配置好"></a>在编译内核时 config 文件没有配置好</h2><p>一开始直接用<code>make defconfig</code>命令，编译了一个几乎啥都不带的内核。之后才明白如果想沿用当前系统设置应该用<code>zcat /proc/config.gz &gt; .config</code>命令。<br>还好有 <em>善意的提醒</em> 不然又得从头再来。</p>
+<h2 id="在-Patch-时报错，提示-patch-rejected"><a href="#在-Patch-时报错，提示-patch-rejected" class="headerlink" title="在 Patch 时报错，提示 patch rejected"></a>在 Patch 时报错，提示 patch rejected</h2><p>这是因为我用了 tuna 的 patch 包，这个包是用来一步到位从 5.3 升级到 5.3.8 的，而要想从 5.3.7 升级到 5.3.8，则需要从 <a href="https://www.kernel.org" target="_blank" rel="noopener">https://www.kernel.org</a> 上下载 Inc.patch 包。</p>
+
+          
+            <br>
+            
+              
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=http://blog.zam-meow.cn/2019/11/02/Linux%E5%88%9D%E4%BD%93%E9%AA%8C/>http://blog.zam-meow.cn/2019/11/02/Linux%E5%88%9D%E4%BD%93%E9%AA%8C/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+
+
+            
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-16T10:15:26+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年4月16日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/syscall/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>syscall</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Patch/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Patch</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：6.2k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：24分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.zam-meow.cn/2019/11/02/Linux%E5%88%9D%E4%BD%93%E9%AA%8C/&title=Linux初体验 - Zam’s Blog&summary=用 VMware 安装Linux虚拟机，还可以顺带做网安组的 Task，美滋滋。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://blog.zam-meow.cn/2019/11/02/Linux%E5%88%9D%E4%BD%93%E9%AA%8C/&title=Linux初体验 - Zam’s Blog&summary=用 VMware 安装Linux虚拟机，还可以顺带做网安组的 Task，美滋滋。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://blog.zam-meow.cn/2019/11/02/Linux%E5%88%9D%E4%BD%93%E9%AA%8C/&title=Linux初体验 - Zam’s Blog&summary=用 VMware 安装Linux虚拟机，还可以顺带做网安组的 Task，美滋滋。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADu0lEQVR42u3aQW4jMQwEwPz/0977AoMRmxybTko3O7FHKuXQaObnZUXrBwE4cODAWeDALYH7CdfV50/fv3tdfe7/P788ePe84MCBAwcOHDhwy+COA2ATqHvQu/dP9xufFxw4cODAgQMHbincafAcKwYvvq8buKcuFBw4cODAgQMH7rfCpYG2CpUWlNUADw4cOHDgwIED91fguu+f/rxaXIIDBw4cOHDgwP01uDTApoE2HXCng+41k3xw4MCBAwcOHLghuOqqQmx7HZ8XHDhw4MCBAwduCVx3pcXiUxfTDby35wUHDhw4cODAgVsCVy0SnxpUTwXv6kC67AAOHDhw4MCBA7cM7vSD6SB6Gi4N4qf7vgQGBw4cOHDgwIFbAjf1xenB06Ly9ELToHzcAIMDBw4cOHDgwH0ILi0uqwVgerBqEVkdWJf/gMCBAwcOHDhw4JbCpUG4OwCuFqLpPrqDbXDgwIEDBw4cuC1w1aKyWlxOBdqpi20XreDAgQMHDhw4cEvgTovE9MFPDb7TwNwtPsGBAwcOHDhw4LbBTQ+eq8E2DbBdwGqRCg4cOHDgwIEDtwVuqhB8NVcVML2I6kVeBmBw4MCBAwcOHLgvg0sLxW5g7hatHw/A4MCBAwcOHDhwDxeZ1YNUA+1UQE6D++n+wIEDBw4cOHDgvgUuLfhui7+wEB0rHovF5+3zwYEDBw4cOHDglsClRWK6sXTAPQXV/j5w4MCBAwcOHLglcN0g2i0e02Da3Wc8qAYHDhw4cODAgVsO1w2wU4GzO2hOL/a4AQYHDhw4cODAgfsw3FSB+Squ7kB6qiA9vWBw4MCBAwcOHLgtcFNB9OnAmh60ekG3+wUHDhw4cODAgVsKVw2QU0VlekFTg/XTCwEHDhw4cODAgdsGV31Qd+DbDeDV193gCw4cOHDgwIEDtw2uWwCmwTctMFOAqYE6OHDgwIEDBw7cFripgFm9iKnAmg7QY2Bw4MCBAwcOHLilcNOFY/qPgOnAvBvM40k+OHDgwIEDBw7cm+GmAuL0P/Sl398dWB8HYHDgwIEDBw4cuCVwaeBNC8QufHoxp59vT/LBgQMHDhw4cODeDNcNtFMbT4Pv6Xnu9nf5Pjhw4MCBAwcO3C+Bqwbd6nOmBtePF5ngwIEDBw4cOHBfCnf6+WqQToNs+ntvKzLBgQMHDhw4cOCG4aoD6TQYnxacxwdqDrSP9wUOHDhw4MCBA7cMrrrSQXAVaBq4W6SCAwcOHDhw4MBtgbOKg24E4MCBA2eBA/fZ9Q/GC3615smcBgAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2019/11/02/AST-Task3/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>AST-Task3</p>
+                <p class='content'>鲸了！数据结构居然如此复杂！
+
+
+栈栈（stack）又名堆栈，它是一种运算受限的线性表。限定仅在表尾进行插入和删除操作的线性表。这一端被称为栈顶，相对地，把另一端称为栈底。向一个栈插入新元素又称...</p>
+              </a>
+            
+            
+              <a class='next' href='/2019/10/26/%E4%BD%BF%E7%94%A8VMware%E6%90%AD%E5%BB%BA%E5%B0%8F%E5%9E%8B%E5%B1%80%E5%9F%9F%E7%BD%91/'>
+                <p class='title'>使用VMware搭建小型局域网<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>在Dian团队的第一个Task~
+
+
+前期准备安装 VMware下载地址：https://www.nocmd.com/740.html安装无脑下一步即可
+安装 Ubuntu镜像下载地址：http...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Linux初体验',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VMware-的安装"><span class="toc-text">VMware 的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arch-Linux-镜像"><span class="toc-text">Arch Linux 镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VMware-配置"><span class="toc-text">VMware 配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arch-Linux-安装准备"><span class="toc-text">Arch Linux 安装准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#启动安装-archlinux"><span class="toc-text">启动安装 archlinux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#确认网络连接情况"><span class="toc-text">确认网络连接情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新系统时间"><span class="toc-text">更新系统时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建立硬盘分区"><span class="toc-text">建立硬盘分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格式化分区"><span class="toc-text">格式化分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#挂载分区"><span class="toc-text">挂载分区</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#EFI-模式引导"><span class="toc-text">EFI 模式引导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BIOS-模式引导"><span class="toc-text">BIOS 模式引导</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装基本系统"><span class="toc-text">安装基本系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#选择软件镜像源"><span class="toc-text">选择软件镜像源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始安装系统"><span class="toc-text">开始安装系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置系统"><span class="toc-text">配置系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fstab"><span class="toc-text">Fstab</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chroot"><span class="toc-text">Chroot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置时区"><span class="toc-text">配置时区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-Locale"><span class="toc-text">配置 Locale</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置主机名"><span class="toc-text">设置主机名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络配置"><span class="toc-text">网络配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置-Root-用户密码"><span class="toc-text">设置 Root 用户密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建新用户"><span class="toc-text">创建新用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-grub"><span class="toc-text">安装 grub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启"><span class="toc-text">重启</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预先准备：启动-DHCP-服务"><span class="toc-text">预先准备：启动 DHCP 服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装图形界面"><span class="toc-text">安装图形界面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-Xorg"><span class="toc-text">安装 Xorg</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-Deepin-Desktop-Environment（DDE）"><span class="toc-text">安装 Deepin Desktop Environment（DDE）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装其余实用软件"><span class="toc-text">安装其余实用软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装桌面管理器-sddm"><span class="toc-text">安装桌面管理器 sddm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置开机启动-sddm-服务"><span class="toc-text">设置开机启动 sddm 服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置网络"><span class="toc-text">配置网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装完成"><span class="toc-text">安装完成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载编译安装最新最鬼酷的-Linux-内核"><span class="toc-text">下载编译安装最新最鬼酷的 Linux 内核</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载内核"><span class="toc-text">下载内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编译内核"><span class="toc-text">编译内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装内核模块"><span class="toc-text">安装内核模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拷贝内核到-boot-目录"><span class="toc-text">拷贝内核到 &#x2F;boot 目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#制作初始化内存盘"><span class="toc-text">制作初始化内存盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拷贝-System-map"><span class="toc-text">拷贝 System.map</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新-grub-配置信息"><span class="toc-text">更新 grub 配置信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#然后-reboot-就可以享受最新（更老）的-kernel-了！"><span class="toc-text">然后 reboot 就可以享受最新（更老）的 kernel 了！</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Patch-自己的内核"><span class="toc-text">Patch 自己的内核</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载-Patch"><span class="toc-text">下载 Patch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解压-Patch"><span class="toc-text">解压 Patch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-Patch"><span class="toc-text">安装 Patch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编译-Patch-后的内核以及之后的步骤"><span class="toc-text">编译 Patch 后的内核以及之后的步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#制作自己的-Patch-文件并打-Patch。"><span class="toc-text">制作自己的 Patch 文件并打 Patch。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改源程序，增加系统调用实现"><span class="toc-text">修改源程序，增加系统调用实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改头文件，增加系统调用声明"><span class="toc-text">修改头文件，增加系统调用声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注册系统调用"><span class="toc-text">注册系统调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成-Patch-文件"><span class="toc-text">生成 Patch 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最终结果"><span class="toc-text">最终结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一开始只安装了-Base-包"><span class="toc-text">一开始只安装了 Base 包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在编译内核时-config-文件没有配置好"><span class="toc-text">在编译内核时 config 文件没有配置好</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-Patch-时报错，提示-patch-rejected"><span class="toc-text">在 Patch 时报错，提示 patch rejected</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2888393918'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:Zam-0703@outlook.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/Zam-0703"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=247373745"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Zam's Blog</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+        <br>
+        <i class="fas fa-chart-area"></i>
+        <span class="post-count">字数统计：46.9k</span>
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        <script>
+            var now = new Date(); 
+            function createtime() { 
+                var grt= new Date("10/04/2019 16:00:00");//在此处修改你的建站时间
+                now.setTime(now.getTime()+250); 
+                days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+                document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+            } 
+        setInterval("createtime()",250);
+        </script>
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://zam-0703.githun.io" target="_blank" rel="noopener">Copyright © 2019-2020 Zam</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "IaxMMAnVuk67VTjLMsPPlScb-gzGzoHsz",
+    appKey: "X0ug2a0Yecjwyt47fJcBjLP1",
+    placeholder: "Write a Comment",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: 'true'
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+</html>
