@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zam-meow.cn/"/>
-  <updated>2020-11-07T06:54:20.023Z</updated>
+  <updated>2021-03-22T07:18:35.125Z</updated>
   <id>http://blog.zam-meow.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Talk with XiaojunHei</title>
+    <link href="http://blog.zam-meow.cn/2021/03/22/Talk%20with%20XiaojunHei/"/>
+    <id>http://blog.zam-meow.cn/2021/03/22/Talk%20with%20XiaojunHei/</id>
+    <published>2021-03-22T07:12:43.560Z</published>
+    <updated>2021-03-22T07:18:35.125Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>发掘自己的长处</li><li>不要觉得非技术工作很无聊，要乐在其中</li><li>对于科研和工程，要加强认识</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;发掘自己的长处&lt;/li&gt;
+&lt;li&gt;不要觉得非技术工作很无聊，要乐在其中&lt;/li&gt;
+&lt;li&gt;对于科研和工程，要加强认识&lt;/li&gt;
+&lt;/ul&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>L3H_Sec 招新-Misc-wp</title>
@@ -207,11 +234,11 @@
     
     
     
+      <category term="Stack" scheme="http://blog.zam-meow.cn/tags/Stack/"/>
+    
       <category term="C" scheme="http://blog.zam-meow.cn/tags/C/"/>
     
       <category term="Learning" scheme="http://blog.zam-meow.cn/tags/Learning/"/>
-    
-      <category term="Stack" scheme="http://blog.zam-meow.cn/tags/Stack/"/>
     
       <category term="Queue" scheme="http://blog.zam-meow.cn/tags/Queue/"/>
     
